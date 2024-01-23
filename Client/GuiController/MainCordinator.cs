@@ -28,13 +28,33 @@ namespace Client.GuiController
 
         //Ulogovani
         public Korisnik ulogovaniKorisnik;
+        public Administrator ulogovaniAdministrator;
 
         //Forme
         public FrmPrijavljivanje frmPrijavljivanje;
+        public FrmRegistracija frmRegistracija;
+        public FrmKorisnik frmKorisnik;
+        public FrmAdministrator frmAdministrator;
 
         internal void KreirajPrijavu()
         {
             korisnikGuiController.KreirajFrmPrijavljivanje(this.frmPrijavljivanje);
+        }
+
+        internal void PrikaziFrmKorisnik()
+        {
+            frmPrijavljivanje.Visible = false;
+            frmKorisnik = new FrmKorisnik();
+            frmKorisnik.ShowDialog();
+            frmPrijavljivanje.Visible = true;
+        }
+
+        internal void PrikaziFrmAdministrator()
+        {
+            frmPrijavljivanje.Visible = false;
+            frmAdministrator = new FrmAdministrator();
+            frmAdministrator.ShowDialog();
+            frmPrijavljivanje.Visible = true;
         }
     }
 }

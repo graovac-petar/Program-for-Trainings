@@ -41,7 +41,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PrijaviSeAdministratorSystemOperation.cs" />
     <Compile Include="PrijaviSeKorisnikSystemOperation.cs" />
+    <Compile Include="RegistrujSeSystemOperation.cs" />
     <Compile Include="SystemOperationBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -2,6 +2,10 @@
 {
     public enum Operation
     {
-        PrijaviSeKorisnik
+        PrijaviSeKorisnik,
+        PrijaviSeAdmin,
+        RegistrujSe,
+        OdjaviSeKorisnik,
+        OdjaviSeAdmin
     }
 }

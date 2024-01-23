@@ -48,11 +48,29 @@
   <ItemGroup>
     <Compile Include="Communication\ClientCommunication.cs" />
     <Compile Include="FormMode.cs" />
+    <Compile Include="Forms\FrmAdministrator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmAdministrator.Designer.cs">
+      <DependentUpon>FrmAdministrator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmKorisnik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmKorisnik.Designer.cs">
+      <DependentUpon>FrmKorisnik.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\FrmPrijavljivanje.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\FrmPrijavljivanje.Designer.cs">
       <DependentUpon>FrmPrijavljivanje.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\FrmRegistracija.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\FrmRegistracija.Designer.cs">
+      <DependentUpon>FrmRegistracija.cs</DependentUpon>
     </Compile>
     <Compile Include="GuiController\KorisnikGuiController.cs" />
     <Compile Include="GuiController\MainCordinator.cs" />
@@ -60,6 +78,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Forms\FrmPrijavljivanje.resx">
       <DependentUpon>FrmPrijavljivanje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\FrmRegistracija.resx">
+      <DependentUpon>FrmRegistracija.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

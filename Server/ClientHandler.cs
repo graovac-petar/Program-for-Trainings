@@ -57,8 +57,7 @@ namespace Server
             try
             {
                 res.Success = true;
-
-
+                #region Korisnik i administrator
                 if (req.Operation == Operation.PrijaviSeKorisnik)
                 {
                     Korisnik kor = (Korisnik)req.Body;
@@ -68,8 +67,37 @@ namespace Server
                     this.korisnik = k;
 
                 }
+                else if (req.Operation == Operation.RegistrujSe)
+                {
+                    Korisnik k = (Korisnik)req.Body;
+                    Korisnik kor = Controller.Instance.KorisnikRegistracija(k);
+                    res.Data = kor;
+                    res.Message = "Uspešna registracija!";
+                }
+                else if (req.Operation == Operation.PrijaviSeAdmin)
+                {
+                    Administrator a = (Administrator)req.Body;
+                    Administrator admin = Controller.Instance.AdministratorPrijavljivanje(a);
+                    res.Data = admin;
+                    res.Message = "Uspešno prijavljivanje";
+                    this.administrator = admin;
 
+                }
+                else if (req.Operation == Operation.OdjaviSeKorisnik)
+                {
+                    Korisnik k = (Korisnik)req.Body;
+                    this.korisnik = null;
+                    res.Message = "Korisnik je odjavljen sa profila";
 
+                }
+                else if (req.Operation == Operation.OdjaviSeAdmin)
+                {
+                    Administrator a = (Administrator)req.Body;
+                    this.administrator = null;
+                    res.Message = "Administrator je odjavljen sa profila";
+
+                }
+                #endregion
             }
             catch (Exception ex)
             {

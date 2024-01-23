@@ -98,5 +98,63 @@ namespace Client.Communication
                 throw ex;
             }
         }
+
+        internal Administrator PrijavljivanjeAdministrator(Administrator admin)
+        {
+            try
+            {
+                if (!SocketConnected()) throw new IOException("Niste konektovani na server");
+
+                Request req = new Request()
+                {
+                    Body = admin,
+                    Operation = Operation.PrijaviSeAdmin
+                };
+                sender.Send(req);
+                Response res = receiver.Receive<Response>();
+
+                admin = res.ConvertResponse<Administrator>();
+
+                return admin;
+            }
+            catch (IOException ex)
+            {
+                DisconnectedCloseApp();
+                throw ex;
+            }
+            catch (System.Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        internal void Registracija(Korisnik k)
+        {
+            try
+            {
+                if (!SocketConnected()) throw new IOException("Niste konektovani na server");
+
+                Request req = new Request()
+                {
+                    Body = k,
+                    Operation = Operation.RegistrujSe
+                };
+                sender.Send(req);
+                Response res = receiver.Receive<Response>();
+
+                k = res.ConvertResponse<Korisnik>();
+
+                System.Windows.Forms.MessageBox.Show(res.Message);
+
+            }
+            catch (IOException ex)
+            {
+                DisconnectedCloseApp();
+            }
+            catch (System.Exception ex)
+            {
+                throw ex;
+            }
+        }
     }
 }

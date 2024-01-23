@@ -13,7 +13,17 @@ namespace Client.Forms
 
         private void FrmPrijavljivanje_Load(object sender, EventArgs e)
         {
-            ClientCommunication.Instance.KonektujSeNaServer();
+            try
+            {
+                lblGreskaEmail.Visible = false;
+                lblGreskaSifra.Visible = false;
+                ClientCommunication.Instance.KonektujSeNaServer();
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

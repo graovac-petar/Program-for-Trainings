@@ -29,13 +29,35 @@ namespace Server
             genericRepository = new GenericDbRepository();
         }
 
-        public Korisnik KorisnikPrijavljivanje(Korisnik kor)
+        #region Korisnik
+        public Korisnik KorisnikPrijavljivanje(Korisnik k)
         {
             PrijaviSeKorisnikSystemOperation prijaviSeKorisnikSystemOperation = new PrijaviSeKorisnikSystemOperation();
-            prijaviSeKorisnikSystemOperation.Korisnik = kor;
+            prijaviSeKorisnikSystemOperation.Korisnik = k;
             prijaviSeKorisnikSystemOperation.Execute();
 
             return prijaviSeKorisnikSystemOperation.Korisnik;
         }
+
+        public Korisnik KorisnikRegistracija(Korisnik k)
+        {
+            RegistrujSeSystemOperation registrujSeSystemOperation = new RegistrujSeSystemOperation();
+            registrujSeSystemOperation.RegistrujKorisnika(k);
+            registrujSeSystemOperation.Execute();
+
+            return registrujSeSystemOperation.Korisnik;
+        }
+        #endregion
+
+        #region Administrator
+        internal Administrator AdministratorPrijavljivanje(Administrator a)
+        {
+            PrijaviSeAdministratorSystemOperation prijaviSeAdministratorSystemOperation = new PrijaviSeAdministratorSystemOperation();
+            prijaviSeAdministratorSystemOperation.Administrator = a;
+            prijaviSeAdministratorSystemOperation.Execute();
+
+            return prijaviSeAdministratorSystemOperation.Administrator;
+        }
+        #endregion
     }
 }
