@@ -7,6 +7,7 @@ namespace Common.Model
     {
         Početni,
         Srednji,
-        Napredni
+        Napredni,
+        ZaDecu
     }
 }

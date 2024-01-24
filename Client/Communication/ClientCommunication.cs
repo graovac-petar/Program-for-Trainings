@@ -2,6 +2,7 @@
 using Common;
 using Common.Communication;
 using Common.Model;
+using System;
 using System.IO;
 using System.Net.Sockets;
 
@@ -70,6 +71,7 @@ namespace Client.Communication
         }
         #endregion
 
+        #region Korisnik
         public Korisnik PrijavljivanjeKorisnik(Korisnik k)
         {
             try
@@ -98,7 +100,62 @@ namespace Client.Communication
                 throw ex;
             }
         }
+        internal void Registracija(Korisnik k)
+        {
+            try
+            {
+                if (!SocketConnected()) throw new IOException("Niste konektovani na server");
 
+                Request req = new Request()
+                {
+                    Body = k,
+                    Operation = Operation.RegistrujSe
+                };
+                sender.Send(req);
+                Response res = receiver.Receive<Response>();
+
+                k = res.ConvertResponse<Korisnik>();
+
+                System.Windows.Forms.MessageBox.Show(res.Message);
+
+            }
+            catch (IOException ex)
+            {
+                DisconnectedCloseApp();
+            }
+            catch (System.Exception ex)
+            {
+                throw ex;
+            }
+        }
+        internal void OdjaviSeKorisnik(Korisnik ulogovaniKorisnik)
+        {
+            try
+            {
+                if (!SocketConnected()) throw new IOException("Niste konektovani na server");
+
+                Request req = new Request()
+                {
+                    Body = ulogovaniKorisnik,
+                    Operation = Operation.OdjaviSeKorisnik
+                };
+                sender.Send(req);
+
+                receiver.Receive<object>();
+            }
+            catch (IOException ex)
+            {
+                DisconnectedCloseApp();
+            }
+            catch (Exception ex)
+            {
+
+                throw ex;
+            }
+        }
+        #endregion
+
+        #region Administrator
         internal Administrator PrijavljivanjeAdministrator(Administrator admin)
         {
             try
@@ -128,7 +185,7 @@ namespace Client.Communication
             }
         }
 
-        internal void Registracija(Korisnik k)
+        internal void OdjaviSeAdministrator(Administrator ulogovaniAdministrator)
         {
             try
             {
@@ -136,25 +193,23 @@ namespace Client.Communication
 
                 Request req = new Request()
                 {
-                    Body = k,
-                    Operation = Operation.RegistrujSe
+                    Body = ulogovaniAdministrator,
+                    Operation = Operation.OdjaviSeAdmin
                 };
                 sender.Send(req);
-                Response res = receiver.Receive<Response>();
 
-                k = res.ConvertResponse<Korisnik>();
-
-                System.Windows.Forms.MessageBox.Show(res.Message);
-
+                receiver.Receive<object>();
             }
             catch (IOException ex)
             {
                 DisconnectedCloseApp();
             }
-            catch (System.Exception ex)
+            catch (Exception ex)
             {
+
                 throw ex;
             }
         }
     }
+    #endregion
 }

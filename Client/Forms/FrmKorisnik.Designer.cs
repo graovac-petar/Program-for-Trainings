@@ -28,12 +28,67 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.pretragaProgramaTreningaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.prijavaNaProgramTreningaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.odjaviSeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.pretragaProgramaTreningaToolStripMenuItem,
+            this.prijavaNaProgramTreningaToolStripMenuItem,
+            this.odjaviSeToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(935, 30);
+            this.menuStrip1.TabIndex = 0;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // pretragaProgramaTreningaToolStripMenuItem
+            // 
+            this.pretragaProgramaTreningaToolStripMenuItem.Name = "pretragaProgramaTreningaToolStripMenuItem";
+            this.pretragaProgramaTreningaToolStripMenuItem.Size = new System.Drawing.Size(209, 26);
+            this.pretragaProgramaTreningaToolStripMenuItem.Text = "Pretraga Programa Treninga";
+            // 
+            // prijavaNaProgramTreningaToolStripMenuItem
+            // 
+            this.prijavaNaProgramTreningaToolStripMenuItem.Name = "prijavaNaProgramTreningaToolStripMenuItem";
+            this.prijavaNaProgramTreningaToolStripMenuItem.Size = new System.Drawing.Size(209, 26);
+            this.prijavaNaProgramTreningaToolStripMenuItem.Text = "Prijava na Program Treninga";
+            // 
+            // odjaviSeToolStripMenuItem
+            // 
+            this.odjaviSeToolStripMenuItem.Alignment = System.Windows.Forms.ToolStripItemAlignment.Right;
+            this.odjaviSeToolStripMenuItem.Name = "odjaviSeToolStripMenuItem";
+            this.odjaviSeToolStripMenuItem.Size = new System.Drawing.Size(84, 26);
+            this.odjaviSeToolStripMenuItem.Text = "Odjavi se";
+            this.odjaviSeToolStripMenuItem.Click += new System.EventHandler(this.odjaviSeToolStripMenuItem_Click);
+            // 
+            // FrmKorisnik
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(935, 525);
+            this.Controls.Add(this.menuStrip1);
+            this.MainMenuStrip = this.menuStrip1;
+            this.Name = "FrmKorisnik";
             this.Text = "FrmKorisnik";
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
         }
 
         #endregion
+
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem pretragaProgramaTreningaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem prijavaNaProgramTreningaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem odjaviSeToolStripMenuItem;
     }
 }
