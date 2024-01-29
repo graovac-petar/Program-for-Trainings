@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Client.UserControls
 {
-    public partial class UcKreirajTrening : UserControl
+    public partial class UcMojiProgramiTreninga : UserControl
     {
-        public UcKreirajTrening()
+        public UcMojiProgramiTreninga()
         {
             InitializeComponent();
         }

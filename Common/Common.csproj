@@ -53,7 +53,6 @@
     <Compile Include="Model\DanUNedelji.cs" />
     <Compile Include="Model\Grupa.cs" />
     <Compile Include="Model\Korisnik.cs" />
-    <Compile Include="Model\Nivo.cs" />
     <Compile Include="Model\Prijava.cs" />
     <Compile Include="Model\ProgramTreninga.cs" />
     <Compile Include="Model\Trening.cs" />

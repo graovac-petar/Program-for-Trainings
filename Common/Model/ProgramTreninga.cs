@@ -1,28 +1,35 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data.SqlClient;
 
 namespace Common.Model
 {
+    [Serializable]
     public class ProgramTreninga : IEntity
     {
         public int ProgramTreningaId { get; set; }
         public string NazivProgramaTreninga { get; set; }
         public int BrojTreningaNedeljno { get; set; }
+        public double Cena { get; set; }
+        public string Opis { get; set; }
+
         public override string ToString()
         {
             return NazivProgramaTreninga;
         }
-
+        [Browsable(false)]
         public string TableName => "ProgramTreninga";
-
-        public string InsertValues => $"'{NazivProgramaTreninga}',{BrojTreningaNedeljno}";
-
-        public string UpdateValues => $"'{NazivProgramaTreninga}',{BrojTreningaNedeljno}";
-
+        [Browsable(false)]
+        public string InsertValues => $"'{NazivProgramaTreninga}',{BrojTreningaNedeljno},{Cena},'{Opis}'";
+        [Browsable(false)]
+        public string UpdateValues => $"'{NazivProgramaTreninga}',{BrojTreningaNedeljno},{Cena},'{Opis}'";
+        [Browsable(false)]
         public string Join => "";
-
+        [Browsable(false)]
         public string PrimaryKeyName => "ProgramTreningaId";
+        [Browsable(false)]
+        public String SearchQuery { get; set; }
 
         public List<IEntity> GetList(SqlDataReader reader)
         {
@@ -31,12 +38,14 @@ namespace Common.Model
                 List<IEntity> programiTreninga = new List<IEntity>();
                 while (reader.Read())
                 {
-                    ProgramTreninga programTreninga = new ProgramTreninga()
-                    {
-                        ProgramTreningaId = reader.GetInt32(0),
-                        NazivProgramaTreninga = reader.GetString(1),
-                        BrojTreningaNedeljno = reader.GetInt32(2)
-                    };
+                    ProgramTreninga programTreninga = new ProgramTreninga();
+
+                    programTreninga.ProgramTreningaId = reader.GetInt32(0);
+                    programTreninga.NazivProgramaTreninga = reader.GetString(1);
+                    programTreninga.BrojTreningaNedeljno = reader.GetInt32(2);
+                    programTreninga.Cena = reader.GetDouble(3);
+                    programTreninga.Opis = reader.GetString(4);
+
                     programiTreninga.Add(programTreninga);
                 }
                 return programiTreninga;

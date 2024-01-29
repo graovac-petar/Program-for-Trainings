@@ -41,11 +41,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PosaljiPrijavuZaProgramTreningaSystemOperation.cs" />
+    <Compile Include="PretraziProgrameTreningaSystemOperation.cs" />
     <Compile Include="PrijaviSeAdministratorSystemOperation.cs" />
     <Compile Include="PrijaviSeKorisnikSystemOperation.cs" />
     <Compile Include="RegistrujSeSystemOperation.cs" />
     <Compile Include="SystemOperationBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VratiSvePrijaveZaKorisnikaSystemOperation.cs" />
+    <Compile Include="VratiPrijavuZaProgramTreningaSystemOperation.cs" />
+    <Compile Include="VratiProgramTreningaSystemOperation.cs" />
+    <Compile Include="VratiSveProgrameTreningaSystemOperation.cs" />
+    <Compile Include="VratiTreningeSystemOperation.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common\Common.csproj">

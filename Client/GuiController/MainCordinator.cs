@@ -19,12 +19,15 @@ namespace Client.GuiController
         {
             //ovde se inicijalizuju svi kontroleri
             korisnikGuiController = new KorisnikGuiController();
-            //kursGuiController = new KursGuiController();
-            //prijavaNaKursGuiController = new PrijavaNaKursGuiController();
-            //grupaGuiController = new GrupaGuiController();
+            programTreningaGuiController = new ProgramTreningaGuiController();
+            prijavaGuiController = new PrijavaGuiController();
+            grupaGuiController = new GrupaGuiController();
         }
         //Kontroleri
         private KorisnikGuiController korisnikGuiController;
+        private PrijavaGuiController prijavaGuiController;
+        private GrupaGuiController grupaGuiController;
+        private ProgramTreningaGuiController programTreningaGuiController;
 
         //Ulogovani
         public Korisnik ulogovaniKorisnik;
@@ -55,6 +58,40 @@ namespace Client.GuiController
             frmAdministrator = new FrmAdministrator();
             frmAdministrator.ShowDialog();
             frmPrijavljivanje.Visible = true;
+        }
+
+        internal void PrikaziSveProgramTreningaKorisnik()
+        {
+            frmKorisnik.PromeniPanel(programTreningaGuiController.KreirajUcPrikazProgramaTreninga(FormMode.ChooseKorisnik));
+        }
+        internal void PrikaziSveProgramTreningaAdministrator()
+        {
+            frmAdministrator.PromeniPanel(programTreningaGuiController.KreirajUcPrikazProgramaTreninga(FormMode.ChooseAdmin));
+        }
+
+        internal void PrikaziPodatkeOProgramuTreningaKorisnik(ProgramTreninga pt)
+        {
+            frmKorisnik.PromeniPanel(programTreningaGuiController.KreirajUcPrikaziProgramTreninga(FormMode.ChooseKorisnik, pt));
+        }
+
+        internal void PrikaziKreirajPrijavuNaProgramTreninga(ProgramTreninga pt)
+        {
+            frmKorisnik.PromeniPanel(prijavaGuiController.KreirajUcPrijaviSeNaProgramTreninga(ulogovaniKorisnik, pt));
+        }
+
+        internal void PrikaziMojaPrijave()
+        {
+            frmKorisnik.PromeniPanel(prijavaGuiController.KreirajUcMojePrijave());
+        }
+
+        internal void PrikaziPodatkeOProgramuTreningaAdministrator(ProgramTreninga pt)
+        {
+            frmAdministrator.PromeniPanel(programTreningaGuiController.KreirajUcIzmenaProgramTreninga(FormMode.Edit, pt));
+        }
+
+        internal void NapraviProgramTreningaAdministrator()
+        {
+            frmAdministrator.PromeniPanel(programTreningaGuiController.KreirajUcIzmenaProgramTreninga(FormMode.Add));
         }
     }
 }

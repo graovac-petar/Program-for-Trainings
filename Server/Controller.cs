@@ -2,6 +2,7 @@
 using Common.Model;
 using Repository.Implementation;
 using Repository.Interfaces;
+using System.Collections.Generic;
 using SystemOperation;
 
 namespace Server
@@ -57,6 +58,70 @@ namespace Server
             prijaviSeAdministratorSystemOperation.Execute();
 
             return prijaviSeAdministratorSystemOperation.Administrator;
+        }
+        #endregion
+
+        #region ProgramTreninga
+        internal List<ProgramTreninga> VratiSveProgrameTreninga()
+        {
+            VratiSveProgrameTreningaSystemOperation vratiSveProgrameTreningaSystemOperation = new VratiSveProgrameTreningaSystemOperation();
+            vratiSveProgrameTreningaSystemOperation.Execute();
+            return vratiSveProgrameTreningaSystemOperation.programiTreninga;
+        }
+
+        internal List<ProgramTreninga> PretraziProgramTreninga(ProgramTreninga body)
+        {
+            PretraziProgrameTreningaSystemOperation pretraziProgramTreningaSystemOperation = new PretraziProgrameTreningaSystemOperation();
+            pretraziProgramTreningaSystemOperation.programTreninga = body;
+            pretraziProgramTreningaSystemOperation.Execute();
+
+            return pretraziProgramTreningaSystemOperation.listaprogramaTreninga;
+        }
+
+        internal ProgramTreninga VratiProgramTreninga(ProgramTreninga body)
+        {
+            VratiProgramTreningaSystemOperation vratiProgramTreningaSystemOperation = new VratiProgramTreningaSystemOperation();
+            vratiProgramTreningaSystemOperation.programTreninga = body;
+            vratiProgramTreningaSystemOperation.Execute();
+
+            return vratiProgramTreningaSystemOperation.programTreninga;
+        }
+        #endregion ProgramTreninga
+        #region Treninge
+        internal List<Trening> VratiTreninge(ProgramTreninga body)
+        {
+            VratiTreningeSystemOperation vratiTreningeSystemOperation = new VratiTreningeSystemOperation();
+            vratiTreningeSystemOperation.ProgramTreninga = body;
+            vratiTreningeSystemOperation.Execute();
+
+            return vratiTreningeSystemOperation.listaTreninga;
+        }
+        #endregion
+
+        #region Treninge
+        internal Prijava VratiPrijavuZaProgramTreninga(Prijava body)
+        {
+            VratiPrijavuZaProgramTreningaSystemOperation vratiPrijavuZaProgramTreningaSystemOperation = new VratiPrijavuZaProgramTreningaSystemOperation();
+            vratiPrijavuZaProgramTreningaSystemOperation.Prijava = body;
+            vratiPrijavuZaProgramTreningaSystemOperation.Execute();
+
+            return vratiPrijavuZaProgramTreningaSystemOperation.Prijava;
+        }
+
+        internal void PosaljiPrijavuZaProgramTreninga(Prijava body)
+        {
+            PosaljiPrijavuZaProgramTreningaSystemOperation posaljiPrijavuZaProgramTreningaSystemOperation = new PosaljiPrijavuZaProgramTreningaSystemOperation();
+            posaljiPrijavuZaProgramTreningaSystemOperation.prijava = body;
+            posaljiPrijavuZaProgramTreningaSystemOperation.Execute();
+        }
+
+        internal List<Prijava> VratiPrijaveZaKorisnuka(Korisnik body)
+        {
+            VratiSvePrijaveZaKorisnikaSystemOperation vratiSvePrijaveZaKorisnikaSystemOperation = new VratiSvePrijaveZaKorisnikaSystemOperation();
+            vratiSvePrijaveZaKorisnikaSystemOperation.korisnik = body;
+            vratiSvePrijaveZaKorisnikaSystemOperation.Execute();
+            return vratiSvePrijaveZaKorisnikaSystemOperation.listaPrijava;
+
         }
         #endregion
     }

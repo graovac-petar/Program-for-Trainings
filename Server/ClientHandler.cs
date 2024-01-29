@@ -98,6 +98,48 @@ namespace Server
 
                 }
                 #endregion
+
+                #region Program treninga
+                else if (req.Operation == Operation.VratiSveProgrameTreninga)
+                {
+                    res.Data = Controller.Instance.VratiSveProgrameTreninga();
+                    res.Message = "Uspesno vraceni programi treninga";
+                }
+                else if (req.Operation == Operation.PretraziProgramTreninga)
+                {
+                    res.Data = Controller.Instance.PretraziProgramTreninga((ProgramTreninga)req.Body);
+                    res.Message = "Uspesno vraceni programi treninga";
+                }
+                else if (req.Operation == Operation.VratiProgramTreninga)
+                {
+                    res.Data = Controller.Instance.VratiProgramTreninga((ProgramTreninga)req.Body);
+                    res.Message = "Uspesno vracen program treninga";
+                }
+                #endregion
+                #region Trening
+                else if (req.Operation == Operation.VratiTreninge)
+                {
+                    res.Data = Controller.Instance.VratiTreninge((ProgramTreninga)req.Body);
+                    res.Message = "Uspesno vraceni treninzi";
+                }
+                #endregion
+                #region Prijava
+                else if (req.Operation == Operation.VratiPrijavuZaProgramTreninga)
+                {
+                    res.Data = Controller.Instance.VratiPrijavuZaProgramTreninga((Prijava)req.Body);
+                    res.Message = "Uspesno vracena prijava";
+                }
+                else if (req.Operation == Operation.PosaljiPrijavuZaProgramTreninga)
+                {
+                    Controller.Instance.PosaljiPrijavuZaProgramTreninga((Prijava)req.Body);
+                    res.Message = "Uspesno poslata prijava";
+                }
+                else if (req.Operation == Operation.VratiPrijaveZaKorisnika)
+                {
+                    res.Data = Controller.Instance.VratiPrijaveZaKorisnuka((Korisnik)req.Body);
+                    res.Message = "Uspesno vracene prijave";
+                }
+                #endregion
             }
             catch (Exception ex)
             {

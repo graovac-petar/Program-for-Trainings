@@ -10,15 +10,20 @@ namespace Client.Forms
         public FrmAdministrator()
         {
             InitializeComponent();
+            this.kreirajToolStripMenuItem1.Click += (s, e) => MainCoordinator.Instance.NapraviProgramTreningaAdministrator();
+            this.izmeniToolStripMenuItem1.Click += (s, e) => MainCoordinator.Instance.PrikaziSveProgramTreningaAdministrator();
+        }
+        internal void PromeniPanel(Control control)
+        {
+            pnlGlavna.Controls.Clear();
+            control.Dock = DockStyle.Fill;
+            pnlGlavna.Controls.Add(control);
         }
 
         private void odjaviSeToolStripMenuItem_Click(object sender, EventArgs e)
         {
             try
             {
-                this.DialogResult = DialogResult.OK;
-                //sta ce nam ovo
-
                 if (MainCoordinator.Instance.ulogovaniKorisnik != null)
                 {
                     ClientCommunication.instance.OdjaviSeKorisnik(MainCoordinator.Instance.ulogovaniKorisnik);

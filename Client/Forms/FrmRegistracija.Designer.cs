@@ -55,177 +55,197 @@ namespace Client.Forms
             // lblRegistracija
             // 
             this.lblRegistracija.AutoSize = true;
-            this.lblRegistracija.Location = new System.Drawing.Point(334, 65);
+            this.lblRegistracija.Location = new System.Drawing.Point(445, 80);
+            this.lblRegistracija.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblRegistracija.Name = "lblRegistracija";
-            this.lblRegistracija.Size = new System.Drawing.Size(62, 13);
+            this.lblRegistracija.Size = new System.Drawing.Size(79, 16);
             this.lblRegistracija.TabIndex = 0;
             this.lblRegistracija.Text = "Registracija";
             // 
             // lblIme
             // 
             this.lblIme.AutoSize = true;
-            this.lblIme.Location = new System.Drawing.Point(216, 125);
+            this.lblIme.Location = new System.Drawing.Point(288, 154);
+            this.lblIme.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblIme.Name = "lblIme";
-            this.lblIme.Size = new System.Drawing.Size(24, 13);
+            this.lblIme.Size = new System.Drawing.Size(29, 16);
             this.lblIme.TabIndex = 1;
             this.lblIme.Text = "Ime";
             // 
             // lblGreskaSifra
             // 
             this.lblGreskaSifra.AutoSize = true;
-            this.lblGreskaSifra.Location = new System.Drawing.Point(328, 461);
+            this.lblGreskaSifra.Location = new System.Drawing.Point(437, 567);
+            this.lblGreskaSifra.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGreskaSifra.Name = "lblGreskaSifra";
-            this.lblGreskaSifra.Size = new System.Drawing.Size(35, 13);
+            this.lblGreskaSifra.Size = new System.Drawing.Size(44, 16);
             this.lblGreskaSifra.TabIndex = 3;
             this.lblGreskaSifra.Text = "label4";
             // 
             // lblDatumRodjenja
             // 
             this.lblDatumRodjenja.AutoSize = true;
-            this.lblDatumRodjenja.Location = new System.Drawing.Point(212, 261);
+            this.lblDatumRodjenja.Location = new System.Drawing.Point(283, 321);
+            this.lblDatumRodjenja.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDatumRodjenja.Name = "lblDatumRodjenja";
-            this.lblDatumRodjenja.Size = new System.Drawing.Size(83, 13);
+            this.lblDatumRodjenja.Size = new System.Drawing.Size(104, 16);
             this.lblDatumRodjenja.TabIndex = 5;
             this.lblDatumRodjenja.Text = "Datum Rodjenja";
             // 
             // lblGreskaDatum
             // 
             this.lblGreskaDatum.AutoSize = true;
-            this.lblGreskaDatum.Location = new System.Drawing.Point(334, 284);
+            this.lblGreskaDatum.Location = new System.Drawing.Point(445, 350);
+            this.lblGreskaDatum.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGreskaDatum.Name = "lblGreskaDatum";
-            this.lblGreskaDatum.Size = new System.Drawing.Size(35, 13);
+            this.lblGreskaDatum.Size = new System.Drawing.Size(44, 16);
             this.lblGreskaDatum.TabIndex = 6;
             this.lblGreskaDatum.Text = "label7";
             // 
             // lblGreskaPrezime
             // 
             this.lblGreskaPrezime.AutoSize = true;
-            this.lblGreskaPrezime.Location = new System.Drawing.Point(334, 226);
+            this.lblGreskaPrezime.Location = new System.Drawing.Point(445, 278);
+            this.lblGreskaPrezime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGreskaPrezime.Name = "lblGreskaPrezime";
-            this.lblGreskaPrezime.Size = new System.Drawing.Size(35, 13);
+            this.lblGreskaPrezime.Size = new System.Drawing.Size(44, 16);
             this.lblGreskaPrezime.TabIndex = 7;
             this.lblGreskaPrezime.Text = "label8";
             // 
             // lblPrezime
             // 
             this.lblPrezime.AutoSize = true;
-            this.lblPrezime.Location = new System.Drawing.Point(216, 203);
+            this.lblPrezime.Location = new System.Drawing.Point(288, 250);
+            this.lblPrezime.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPrezime.Name = "lblPrezime";
-            this.lblPrezime.Size = new System.Drawing.Size(44, 13);
+            this.lblPrezime.Size = new System.Drawing.Size(56, 16);
             this.lblPrezime.TabIndex = 8;
             this.lblPrezime.Text = "Prezime";
             // 
             // lblGreskaEmail
             // 
             this.lblGreskaEmail.AutoSize = true;
-            this.lblGreskaEmail.Location = new System.Drawing.Point(328, 407);
+            this.lblGreskaEmail.Location = new System.Drawing.Point(437, 501);
+            this.lblGreskaEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGreskaEmail.Name = "lblGreskaEmail";
-            this.lblGreskaEmail.Size = new System.Drawing.Size(41, 13);
+            this.lblGreskaEmail.Size = new System.Drawing.Size(51, 16);
             this.lblGreskaEmail.TabIndex = 9;
             this.lblGreskaEmail.Text = "label10";
             // 
             // lblGreskaKontakt
             // 
             this.lblGreskaKontakt.AutoSize = true;
-            this.lblGreskaKontakt.Location = new System.Drawing.Point(328, 349);
+            this.lblGreskaKontakt.Location = new System.Drawing.Point(437, 430);
+            this.lblGreskaKontakt.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGreskaKontakt.Name = "lblGreskaKontakt";
-            this.lblGreskaKontakt.Size = new System.Drawing.Size(41, 13);
+            this.lblGreskaKontakt.Size = new System.Drawing.Size(51, 16);
             this.lblGreskaKontakt.TabIndex = 10;
             this.lblGreskaKontakt.Text = "label11";
             // 
             // lblSifra
             // 
             this.lblSifra.AutoSize = true;
-            this.lblSifra.Location = new System.Drawing.Point(216, 438);
+            this.lblSifra.Location = new System.Drawing.Point(288, 539);
+            this.lblSifra.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblSifra.Name = "lblSifra";
-            this.lblSifra.Size = new System.Drawing.Size(28, 13);
+            this.lblSifra.Size = new System.Drawing.Size(34, 16);
             this.lblSifra.TabIndex = 11;
             this.lblSifra.Text = "Sifra";
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(219, 384);
+            this.lblEmail.Location = new System.Drawing.Point(292, 473);
+            this.lblEmail.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(32, 13);
+            this.lblEmail.Size = new System.Drawing.Size(41, 16);
             this.lblEmail.TabIndex = 12;
             this.lblEmail.Text = "Email";
             // 
             // lblTelefon
             // 
             this.lblTelefon.AutoSize = true;
-            this.lblTelefon.Location = new System.Drawing.Point(216, 329);
+            this.lblTelefon.Location = new System.Drawing.Point(288, 405);
+            this.lblTelefon.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTelefon.Name = "lblTelefon";
-            this.lblTelefon.Size = new System.Drawing.Size(79, 13);
+            this.lblTelefon.Size = new System.Drawing.Size(94, 16);
             this.lblTelefon.TabIndex = 13;
             this.lblTelefon.Text = "Kontakt telefon";
             // 
             // lblGreskaIme
             // 
             this.lblGreskaIme.AutoSize = true;
-            this.lblGreskaIme.Location = new System.Drawing.Point(334, 150);
+            this.lblGreskaIme.Location = new System.Drawing.Point(445, 185);
+            this.lblGreskaIme.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblGreskaIme.Name = "lblGreskaIme";
-            this.lblGreskaIme.Size = new System.Drawing.Size(41, 13);
+            this.lblGreskaIme.Size = new System.Drawing.Size(51, 16);
             this.lblGreskaIme.TabIndex = 14;
             this.lblGreskaIme.Text = "label15";
             // 
             // btnRegistracija
             // 
-            this.btnRegistracija.Location = new System.Drawing.Point(259, 588);
+            this.btnRegistracija.Location = new System.Drawing.Point(359, 620);
+            this.btnRegistracija.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRegistracija.Name = "btnRegistracija";
-            this.btnRegistracija.Size = new System.Drawing.Size(148, 57);
+            this.btnRegistracija.Size = new System.Drawing.Size(197, 70);
             this.btnRegistracija.TabIndex = 15;
             this.btnRegistracija.Text = "Registruj se";
             this.btnRegistracija.UseVisualStyleBackColor = true;
             // 
             // txtIme
             // 
-            this.txtIme.Location = new System.Drawing.Point(318, 127);
+            this.txtIme.Location = new System.Drawing.Point(424, 156);
+            this.txtIme.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtIme.Name = "txtIme";
-            this.txtIme.Size = new System.Drawing.Size(100, 20);
+            this.txtIme.Size = new System.Drawing.Size(132, 22);
             this.txtIme.TabIndex = 16;
             // 
             // txtPrezime
             // 
-            this.txtPrezime.Location = new System.Drawing.Point(318, 203);
+            this.txtPrezime.Location = new System.Drawing.Point(424, 250);
+            this.txtPrezime.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPrezime.Name = "txtPrezime";
-            this.txtPrezime.Size = new System.Drawing.Size(100, 20);
+            this.txtPrezime.Size = new System.Drawing.Size(132, 22);
             this.txtPrezime.TabIndex = 17;
             // 
             // txtKontakt
             // 
-            this.txtKontakt.Location = new System.Drawing.Point(318, 326);
+            this.txtKontakt.Location = new System.Drawing.Point(424, 401);
+            this.txtKontakt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtKontakt.Name = "txtKontakt";
-            this.txtKontakt.Size = new System.Drawing.Size(100, 20);
+            this.txtKontakt.Size = new System.Drawing.Size(132, 22);
             this.txtKontakt.TabIndex = 19;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(318, 384);
+            this.txtEmail.Location = new System.Drawing.Point(424, 473);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(100, 20);
+            this.txtEmail.Size = new System.Drawing.Size(132, 22);
             this.txtEmail.TabIndex = 20;
             // 
             // txtSifra
             // 
-            this.txtSifra.Location = new System.Drawing.Point(318, 438);
+            this.txtSifra.Location = new System.Drawing.Point(424, 539);
+            this.txtSifra.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtSifra.Name = "txtSifra";
-            this.txtSifra.Size = new System.Drawing.Size(100, 20);
+            this.txtSifra.Size = new System.Drawing.Size(132, 22);
             this.txtSifra.TabIndex = 21;
             // 
             // dtpDatumRodjenja
             // 
-            this.dtpDatumRodjenja.Location = new System.Drawing.Point(318, 261);
+            this.dtpDatumRodjenja.Location = new System.Drawing.Point(424, 321);
+            this.dtpDatumRodjenja.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtpDatumRodjenja.Name = "dtpDatumRodjenja";
-            this.dtpDatumRodjenja.Size = new System.Drawing.Size(188, 20);
+            this.dtpDatumRodjenja.Size = new System.Drawing.Size(249, 22);
             this.dtpDatumRodjenja.TabIndex = 22;
             this.dtpDatumRodjenja.Value = new System.DateTime(2001, 10, 19, 0, 0, 0, 0);
             // 
             // FrmRegistracija
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 683);
+            this.ClientSize = new System.Drawing.Size(1067, 841);
             this.Controls.Add(this.dtpDatumRodjenja);
             this.Controls.Add(this.txtSifra);
             this.Controls.Add(this.txtEmail);
@@ -246,6 +266,7 @@ namespace Client.Forms
             this.Controls.Add(this.lblGreskaSifra);
             this.Controls.Add(this.lblIme);
             this.Controls.Add(this.lblRegistracija);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmRegistracija";
             this.Text = "FrmRegistracija";
             this.ResumeLayout(false);

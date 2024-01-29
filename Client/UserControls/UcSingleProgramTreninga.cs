@@ -2,9 +2,9 @@
 
 namespace Client.UserControls
 {
-    public partial class UcKreirajProgramTreninga : UserControl
+    public partial class UcSingleProgramTreninga : UserControl
     {
-        public UcKreirajProgramTreninga()
+        public UcSingleProgramTreninga()
         {
             InitializeComponent();
         }

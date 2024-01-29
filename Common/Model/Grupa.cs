@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 
 namespace Common.Model
 {
+    [Serializable]
     public class Grupa : IEntity
     {
         [Browsable(false)]

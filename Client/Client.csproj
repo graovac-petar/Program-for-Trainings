@@ -72,8 +72,11 @@
     <Compile Include="Forms\FrmRegistracija.Designer.cs">
       <DependentUpon>FrmRegistracija.cs</DependentUpon>
     </Compile>
+    <Compile Include="GuiController\GrupaGuiController.cs" />
     <Compile Include="GuiController\KorisnikGuiController.cs" />
     <Compile Include="GuiController\MainCordinator.cs" />
+    <Compile Include="GuiController\PrijavaGuiController.cs" />
+    <Compile Include="GuiController\ProgramTreningaGuiController.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserControls\UcKreirajProgramTreninga.cs">
@@ -82,11 +85,35 @@
     <Compile Include="UserControls\UcKreirajProgramTreninga.Designer.cs">
       <DependentUpon>UcKreirajProgramTreninga.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UcKreirajTrening.cs">
+    <Compile Include="UserControls\UcMojiProgramiTreninga.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControls\UcKreirajTrening.Designer.cs">
-      <DependentUpon>UcKreirajTrening.cs</DependentUpon>
+    <Compile Include="UserControls\UcMojiProgramiTreninga.Designer.cs">
+      <DependentUpon>UcMojiProgramiTreninga.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UcPretragaProgramaTreninga.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UcPretragaProgramaTreninga.Designer.cs">
+      <DependentUpon>UcPretragaProgramaTreninga.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UcPrijavaNaProgramTreninga.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UcPrijavaNaProgramTreninga.Designer.cs">
+      <DependentUpon>UcPrijavaNaProgramTreninga.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UcSingleProgramTreninga.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UcSingleProgramTreninga.Designer.cs">
+      <DependentUpon>UcSingleProgramTreninga.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UcSingleTrening.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UcSingleTrening.Designer.cs">
+      <DependentUpon>UcSingleTrening.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Forms\FrmAdministrator.resx">
       <DependentUpon>FrmAdministrator.cs</DependentUpon>
@@ -112,8 +139,20 @@
     <EmbeddedResource Include="UserControls\UcKreirajProgramTreninga.resx">
       <DependentUpon>UcKreirajProgramTreninga.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UcKreirajTrening.resx">
-      <DependentUpon>UcKreirajTrening.cs</DependentUpon>
+    <EmbeddedResource Include="UserControls\UcMojiProgramiTreninga.resx">
+      <DependentUpon>UcMojiProgramiTreninga.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UcPretragaProgramaTreninga.resx">
+      <DependentUpon>UcPretragaProgramaTreninga.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UcPrijavaNaProgramTreninga.resx">
+      <DependentUpon>UcPrijavaNaProgramTreninga.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UcSingleProgramTreninga.resx">
+      <DependentUpon>UcSingleProgramTreninga.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UcSingleTrening.resx">
+      <DependentUpon>UcSingleTrening.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

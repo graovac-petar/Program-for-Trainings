@@ -3,6 +3,7 @@ using Common;
 using Common.Communication;
 using Common.Model;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Net.Sockets;
 
@@ -210,6 +211,235 @@ namespace Client.Communication
                 throw ex;
             }
         }
+        #endregion
+
+        #region ProgramTreninga
+        internal List<ProgramTreninga> VratiSveProgrameTreninga()
+        {
+            try
+            {
+                if (!SocketConnected()) throw new IOException("Niste konektovani na server");
+
+                Request req = new Request()
+                {
+                    Operation = Operation.VratiSveProgrameTreninga
+                };
+                sender.Send(req);
+
+                Response res = receiver.Receive<Response>();
+
+                List<ProgramTreninga> programiTreninga = res.ConvertResponse<List<ProgramTreninga>>();
+
+                if (!res.Success) throw new Exception(res.Message);
+
+                return programiTreninga;
+
+
+            }
+            catch (IOException ex)
+            {
+                DisconnectedCloseApp();
+                throw ex;
+            }
+            catch (System.Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        internal List<ProgramTreninga> PretraziProgrameTreninga(ProgramTreninga pt)
+        {
+            try
+            {
+                if (!SocketConnected()) throw new IOException("Niste konektovani na server");
+
+                Request req = new Request()
+                {
+                    Body = pt,
+                    Operation = Operation.PretraziProgramTreninga
+                };
+                sender.Send(req);
+
+                Response res = receiver.Receive<Response>();
+
+                List<ProgramTreninga> pronadjeniProgramiTreninga = res.ConvertResponse<List<ProgramTreninga>>();
+
+                if (!res.Success) throw new Exception(res.Message);
+
+                return pronadjeniProgramiTreninga;
+            }
+            catch (IOException ex)
+            {
+                DisconnectedCloseApp();
+                throw ex;
+            }
+            catch (System.Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        internal ProgramTreninga VratiProgramTreninga(ProgramTreninga programTreninga)
+        {
+            try
+            {
+                if (!SocketConnected()) throw new IOException("Niste konektovani na server");
+
+                Request req = new Request()
+                {
+                    Body = programTreninga,
+                    Operation = Operation.VratiProgramTreninga
+                };
+
+                sender.Send(req);
+
+                Response res = receiver.Receive<Response>();
+
+                ProgramTreninga programtreninga = res.ConvertResponse<ProgramTreninga>();
+                if (!res.Success) throw new Exception(res.Message);
+
+                return programtreninga;
+            }
+            catch (IOException ex)
+            {
+                DisconnectedCloseApp();
+                throw ex;
+            }
+            catch (System.Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        internal List<Trening> VratiSveTreningeZaProgramTreninga(ProgramTreninga pt)
+        {
+            try
+            {
+                if (!SocketConnected()) throw new IOException("Niste konektovani na server");
+
+                Request req = new Request()
+                {
+                    Body = pt,
+                    Operation = Operation.VratiTreninge
+                };
+
+                sender.Send(req);
+
+                Response res = receiver.Receive<Response>();
+
+                List<Trening> trening = res.ConvertResponse<List<Trening>>();
+                if (!res.Success) throw new Exception(res.Message);
+
+                return trening;
+            }
+            catch (IOException ex)
+            {
+                DisconnectedCloseApp();
+                throw ex;
+            }
+            catch (System.Exception ex)
+            {
+                throw ex;
+            }
+        }
+        #endregion
+
+        #region Priajva
+        internal object VratiPrijavu(Prijava p)
+        {
+            try
+            {
+                if (!SocketConnected()) throw new IOException("Niste konektovani na server");
+
+                Request req = new Request()
+                {
+                    Body = p,
+                    Operation = Operation.VratiPrijavuZaProgramTreninga
+                };
+                sender.Send(req);
+
+                Response res = receiver.Receive<Response>();
+
+                Prijava prijava = res.ConvertResponse<Prijava>();
+
+                if (!res.Success) throw new Exception(res.Message);
+
+                return prijava;
+            }
+            catch (IOException ex)
+            {
+                DisconnectedCloseApp();
+                throw ex;
+            }
+            catch (System.Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        internal void PosaljiPrijavu(Prijava p)
+        {
+            try
+            {
+                if (!SocketConnected()) throw new IOException("Niste konektovani na server");
+
+                Request req = new Request()
+                {
+                    Body = p,
+                    Operation = Operation.PosaljiPrijavuZaProgramTreninga
+                };
+                sender.Send(req);
+
+                Response res = receiver.Receive<Response>();
+
+                Prijava prijava = res.ConvertResponse<Prijava>();
+
+                if (!res.Success) throw new Exception(res.Message);
+
+                if (res.Success) System.Windows.Forms.MessageBox.Show(res.Message);
+            }
+            catch (IOException ex)
+            {
+                DisconnectedCloseApp();
+            }
+            catch (System.Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        internal List<Prijava> VratiPrijaveZaKorisnika(Korisnik ulogovaniKorisnik)
+        {
+            try
+            {
+                if (!SocketConnected()) throw new IOException("Niste konektovani na server");
+
+                Request req = new Request()
+                {
+                    Body = ulogovaniKorisnik,
+                    Operation = Operation.VratiPrijaveZaKorisnika
+                };
+                sender.Send(req);
+
+                Response res = receiver.Receive<Response>();
+
+                List<Prijava> prijave = res.ConvertResponse<List<Prijava>>();
+
+                if (!res.Success) throw new Exception(res.Message);
+
+                return prijave;
+            }
+            catch (IOException ex)
+            {
+                DisconnectedCloseApp();
+                throw ex;
+            }
+            catch (System.Exception ex)
+            {
+                throw ex;
+            }
+        }
+        #endregion
     }
-    #endregion
+
 }

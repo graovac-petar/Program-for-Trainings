@@ -6,6 +6,13 @@
         PrijaviSeAdmin,
         RegistrujSe,
         OdjaviSeKorisnik,
-        OdjaviSeAdmin
+        OdjaviSeAdmin,
+        VratiSveProgrameTreninga,
+        PretraziProgramTreninga,
+        VratiProgramTreninga,
+        VratiTreninge,
+        VratiPrijavuZaProgramTreninga,
+        PosaljiPrijavuZaProgramTreninga,
+        VratiPrijaveZaKorisnika
     }
 }
