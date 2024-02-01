@@ -13,6 +13,18 @@
         VratiTreninge,
         VratiPrijavuZaProgramTreninga,
         PosaljiPrijavuZaProgramTreninga,
-        VratiPrijaveZaKorisnika
+        VratiPrijaveZaKorisnika,
+        IzmeniProgramTreninga,
+        ObrisiProgramTreninga,
+        VratiSveGrupe,
+        PretraziGrupe,
+        VratiGrupu,
+        IzmeniGrupu,
+        ObrisiGrupu,
+        VratiPrijaveZaGrupu,
+        VratiPrijaveVanGrupe,
+        VratiPrijaveZaProgramTreninga,
+        KreirajGrupu,
+        KreirajProgramTreninga
     }
 }

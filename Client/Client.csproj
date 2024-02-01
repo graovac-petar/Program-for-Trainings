@@ -79,6 +79,12 @@
     <Compile Include="GuiController\ProgramTreningaGuiController.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControls\UcKreirajGrupu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UcKreirajGrupu.Designer.cs">
+      <DependentUpon>UcKreirajGrupu.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UcKreirajProgramTreninga.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -90,6 +96,12 @@
     </Compile>
     <Compile Include="UserControls\UcMojiProgramiTreninga.Designer.cs">
       <DependentUpon>UcMojiProgramiTreninga.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\UcPretragaGrupa.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControls\UcPretragaGrupa.Designer.cs">
+      <DependentUpon>UcPretragaGrupa.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UcPretragaProgramaTreninga.cs">
       <SubType>UserControl</SubType>
@@ -136,11 +148,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UserControls\UcKreirajGrupu.resx">
+      <DependentUpon>UcKreirajGrupu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UcKreirajProgramTreninga.resx">
       <DependentUpon>UcKreirajProgramTreninga.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UcMojiProgramiTreninga.resx">
       <DependentUpon>UcMojiProgramiTreninga.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControls\UcPretragaGrupa.resx">
+      <DependentUpon>UcPretragaGrupa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UcPretragaProgramaTreninga.resx">
       <DependentUpon>UcPretragaProgramaTreninga.cs</DependentUpon>

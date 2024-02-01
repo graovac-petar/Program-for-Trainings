@@ -14,13 +14,19 @@ namespace Common.Model
         public string Napomena { get; set; }
         public Grupa Grupa { get; set; }
         public bool UplacenaClanarina { get; set; }
-
+        public override bool Equals(object obj)
+        {
+            return obj is Prijava prijava &&
+                   EqualityComparer<Korisnik>.Default.Equals(Korisnik, prijava.Korisnik) &&
+                   EqualityComparer<ProgramTreninga>.Default.Equals(ProgramTreninga, prijava.ProgramTreninga) &&
+                   DatumPrijave == prijava.DatumPrijave;
+        }
         [Browsable(false)]
         public string SearchQuery { get; set; }
         [Browsable(false)]
         public string TableName => "Prijavazaprogram";
         [Browsable(false)]
-        public string InsertValues => $"{Korisnik.KorisnikId}, {ProgramTreninga.ProgramTreningaId}, '{DatumPrijave.ToString("yyyy-MM-dd HH:mm:ss")}' , '{Napomena}', {(UplacenaClanarina ? 1 : 0)}, " + (this.Grupa == null ? $"NULL" : $"'{Grupa.GrupaId}'");
+        public string InsertValues => $"{Korisnik.KorisnikId}, {ProgramTreninga.ProgramTreningaId}, '{DatumPrijave.ToString("yyyy-MM-dd HH:mm:ss")}' , '{Napomena}', {(UplacenaClanarina ? 1 : 0)}, " + (Grupa == null ? $"NULL" : $"'{Grupa.GrupaId}'");
         [Browsable(false)]
         public string UpdateValues => $" grupaid='{Grupa.GrupaId}'";
         [Browsable(false)]
@@ -42,31 +48,33 @@ namespace Common.Model
                 {
                     ProgramTreninga pt = new ProgramTreninga()
                     {
-                        ProgramTreningaId = reader.GetInt32(10),
-                        NazivProgramaTreninga = reader.GetString(11),
-                        BrojTreningaNedeljno = reader.GetInt32(12),
-                        Cena = reader.GetDouble(13),
-                        Opis = reader.GetString(14)
+                        ProgramTreningaId = reader.GetInt32(11),
+                        NazivProgramaTreninga = reader.GetString(12),
+                        BrojTreningaNedeljno = reader.GetInt32(13),
+                        Cena = reader.GetDouble(14),
+                        Opis = reader.GetString(15)
                     };
                     Korisnik korisnik = new Korisnik()
                     {
-                        KorisnikId = reader.GetInt32(15),
-                        Ime = reader.GetString(16),
-                        Prezime = reader.GetString(17),
-                        DatumRodjenja = reader.GetDateTime(18),
-                        KontaktTelefon = reader.GetString(19),
-                        Email = reader.GetString(20),
-                        Sifra = reader.GetString(21)
+                        KorisnikId = reader.GetInt32(16),
+                        Ime = reader.GetString(17),
+                        Prezime = reader.GetString(18),
+                        DatumRodjenja = reader.GetDateTime(19),
+                        KontaktTelefon = reader.GetString(20),
+                        Email = reader.GetString(21),
+                        Sifra = reader.GetString(22)
                     };
-                    Prijava pk = new Prijava()
-                    {
-                        Korisnik = korisnik,
-                        ProgramTreninga = pt,
-                        UplacenaClanarina = reader.GetBoolean(4),
-                        DatumPrijave = DateTime.Parse(reader[2].ToString()),
-                        Napomena = reader.GetString(3)
+                    Prijava pk = new Prijava();
+                    pk.Korisnik = korisnik;
+                    pk.ProgramTreninga = pt;
+                    pk.UplacenaClanarina = reader.GetBoolean(4);
+                    pk.DatumPrijave = DateTime.Parse(reader[2].ToString());
+                    if (!reader.IsDBNull(3))
+                        pk.Napomena = reader.GetString(3);
+                    else
+                        pk.Napomena = "";
 
-                    };
+
 
                     if (!reader.IsDBNull(5))
                     {
@@ -75,7 +83,6 @@ namespace Common.Model
                         g.NazivGrupe = reader.GetString(7);
                         g.DatumPocetka = DateTime.Parse(reader[8].ToString());
                         g.DatumKraja = DateTime.Parse(reader[9].ToString());
-
                         pk.Grupa = g;
                     }
 

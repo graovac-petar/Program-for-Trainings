@@ -342,9 +342,96 @@ namespace Client.Communication
                 throw ex;
             }
         }
+        internal void IzmeniProgramTreninga(ProgramTreninga pt)
+        {
+            try
+            {
+                if (!SocketConnected()) throw new IOException("Niste konektovani na server");
+
+                Request req = new Request()
+                {
+                    Body = pt,
+                    Operation = Operation.IzmeniProgramTreninga
+                };
+                sender.Send(req);
+
+                Response res = receiver.Receive<Response>();
+
+                List<Prijava> prijave = res.ConvertResponse<List<Prijava>>();
+
+                if (!res.Success) throw new Exception(res.Message);
+                if (res.Success) System.Windows.Forms.MessageBox.Show(res.Message);
+            }
+            catch (IOException ex)
+            {
+                DisconnectedCloseApp();
+                throw ex;
+            }
+            catch (System.Exception ex)
+            {
+                throw ex;
+            }
+        }
+        internal void KreirajProgramTreninga(ProgramTreninga pt)
+        {
+            try
+            {
+                if (!SocketConnected()) throw new IOException("Niste konektovani na server");
+
+                Request req = new Request()
+                {
+                    Body = pt,
+                    Operation = Operation.ObrisiProgramTreninga
+                };
+                sender.Send(req);
+
+                Response res = receiver.Receive<Response>();
+
+                if (!res.Success) throw new Exception(res.Message);
+                if (res.Success) System.Windows.Forms.MessageBox.Show(res.Message);
+            }
+            catch (IOException ex)
+            {
+                DisconnectedCloseApp();
+                throw ex;
+            }
+            catch (System.Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        internal void ObrisiProgramTreninga(object pt)
+        {
+            try
+            {
+                if (!SocketConnected()) throw new IOException("Niste konektovani na server");
+
+                Request req = new Request()
+                {
+                    Body = pt,
+                    Operation = Operation.ObrisiProgramTreninga
+                };
+                sender.Send(req);
+
+                Response res = receiver.Receive<Response>();
+
+                if (!res.Success) throw new Exception(res.Message);
+                if (res.Success) System.Windows.Forms.MessageBox.Show(res.Message);
+            }
+            catch (IOException ex)
+            {
+                DisconnectedCloseApp();
+                throw ex;
+            }
+            catch (System.Exception ex)
+            {
+                throw ex;
+            }
+        }
         #endregion
 
-        #region Priajva
+        #region Prijava
         internal object VratiPrijavu(Prijava p)
         {
             try
@@ -439,6 +526,260 @@ namespace Client.Communication
                 throw ex;
             }
         }
+        internal List<Prijava> VratiPrijaveZaGrupu(Grupa g)
+        {
+            try
+            {
+                if (!SocketConnected()) throw new IOException("Niste konektovani na server");
+
+                Request req = new Request()
+                {
+                    Body = g,
+                    Operation = Operation.VratiPrijaveZaGrupu
+                };
+                sender.Send(req);
+
+                Response res = receiver.Receive<Response>();
+
+                List<Prijava> prijave = res.ConvertResponse<List<Prijava>>();
+
+                if (!res.Success) throw new Exception(res.Message);
+
+                return prijave;
+            }
+            catch (IOException ex)
+            {
+                DisconnectedCloseApp();
+                throw ex;
+            }
+            catch (System.Exception ex)
+            {
+                throw ex;
+            }
+        }
+        internal List<Prijava> VratiPrijaveVanGrupe(Grupa g)
+        {
+            try
+            {
+                if (!SocketConnected()) throw new IOException("Niste konektovani na server");
+
+                Request req = new Request()
+                {
+                    Body = g,
+                    Operation = Operation.VratiPrijaveVanGrupe
+                };
+                sender.Send(req);
+
+                Response res = receiver.Receive<Response>();
+
+                List<Prijava> prijave = res.ConvertResponse<List<Prijava>>();
+
+                if (!res.Success) throw new Exception(res.Message);
+
+                return prijave;
+            }
+            catch (IOException ex)
+            {
+                DisconnectedCloseApp();
+                throw ex;
+            }
+            catch (System.Exception ex)
+            {
+                throw ex;
+            }
+        }
+        internal List<Prijava> VratiPrijaveZaProgramTreninga(ProgramTreninga pt)
+        {
+            try
+            {
+                if (!SocketConnected()) throw new IOException("Niste konektovani na server");
+
+                Request req = new Request()
+                {
+                    Body = pt,
+                    Operation = Operation.VratiPrijaveZaProgramTreninga
+                };
+                sender.Send(req);
+
+                Response res = receiver.Receive<Response>();
+
+                List<Prijava> prijave = res.ConvertResponse<List<Prijava>>();
+
+                if (!res.Success) throw new Exception(res.Message);
+
+                return prijave;
+            }
+            catch (IOException ex)
+            {
+                DisconnectedCloseApp();
+                throw ex;
+            }
+            catch (System.Exception ex)
+            {
+                throw ex;
+            }
+        }
+        #endregion
+
+        #region Grupa
+        internal List<Grupa> VratiSveGrupe()
+        {
+            try
+            {
+                if (!SocketConnected()) throw new IOException("Niste konektovani na server");
+
+                Request req = new Request()
+                {
+                    Operation = Operation.VratiSveGrupe
+                };
+                sender.Send(req);
+
+                Response res = receiver.Receive<Response>();
+
+                List<Grupa> grupe = res.ConvertResponse<List<Grupa>>();
+
+                if (!res.Success) throw new Exception(res.Message);
+
+                return grupe;
+            }
+            catch (IOException ex)
+            {
+                DisconnectedCloseApp();
+                throw ex;
+            }
+            catch (System.Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        internal List<Grupa> PretraziGrupe(Grupa g)
+        {
+            try
+            {
+                if (!SocketConnected()) throw new IOException("Niste konektovani na server");
+
+                Request req = new Request()
+                {
+                    Body = g,
+                    Operation = Operation.PretraziGrupe
+                };
+                sender.Send(req);
+
+                Response res = receiver.Receive<Response>();
+
+                List<Grupa> pronadjeneGrupe = res.ConvertResponse<List<Grupa>>();
+
+                if (!res.Success) throw new Exception(res.Message);
+
+                return pronadjeneGrupe;
+            }
+            catch (IOException ex)
+            {
+                DisconnectedCloseApp();
+                throw ex;
+            }
+            catch (System.Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        internal Grupa VratiGrupu(Grupa g)
+        {
+            try
+            {
+                if (!SocketConnected()) throw new IOException("Niste konektovani na server");
+
+                Request req = new Request()
+                {
+                    Body = g,
+                    Operation = Operation.VratiGrupu
+                };
+
+                sender.Send(req);
+
+                Response res = receiver.Receive<Response>();
+
+                Grupa grupa = res.ConvertResponse<Grupa>();
+                if (!res.Success) throw new Exception(res.Message);
+
+                return grupa;
+            }
+            catch (IOException ex)
+            {
+                DisconnectedCloseApp();
+                throw ex;
+            }
+            catch (System.Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        internal void ObrisiGrupu(Grupa grupa)
+        {
+            try
+            {
+                if (!SocketConnected()) throw new IOException("Niste konektovani na server");
+
+                Request req = new Request()
+                {
+                    Body = grupa,
+                    Operation = Operation.ObrisiGrupu
+                };
+                sender.Send(req);
+
+                Response res = receiver.Receive<Response>();
+
+                if (!res.Success) throw new Exception(res.Message);
+                if (res.Success) System.Windows.Forms.MessageBox.Show(res.Message);
+            }
+            catch (IOException ex)
+            {
+                DisconnectedCloseApp();
+                throw ex;
+            }
+            catch (System.Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        internal void IzmeniGrupu(Grupa g)
+        {
+            throw new NotImplementedException();
+        }
+
+        internal void KreirajGrupu(Grupa g)
+        {
+            try
+            {
+                if (!SocketConnected()) throw new IOException("Niste konektovani na server");
+
+                Request req = new Request()
+                {
+                    Body = g,
+                    Operation = Operation.KreirajGrupu
+                };
+                sender.Send(req);
+
+                Response res = receiver.Receive<Response>();
+
+                if (!res.Success) throw new Exception(res.Message);
+                if (res.Success) System.Windows.Forms.MessageBox.Show(res.Message);
+            }
+            catch (IOException ex)
+            {
+                DisconnectedCloseApp();
+                throw ex;
+            }
+            catch (System.Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         #endregion
     }
 

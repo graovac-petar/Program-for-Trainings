@@ -58,6 +58,7 @@ namespace Client.Forms
             this.txtKorisnickoIme.Name = "txtKorisnickoIme";
             this.txtKorisnickoIme.Size = new System.Drawing.Size(100, 20);
             this.txtKorisnickoIme.TabIndex = 1;
+            this.txtKorisnickoIme.Text = "z@gmail.com";
             // 
             // txtSifra
             // 
@@ -65,6 +66,7 @@ namespace Client.Forms
             this.txtSifra.Name = "txtSifra";
             this.txtSifra.Size = new System.Drawing.Size(100, 20);
             this.txtSifra.TabIndex = 2;
+            this.txtSifra.Text = "3";
             // 
             // lblEmail
             // 
@@ -132,6 +134,8 @@ namespace Client.Forms
             // ckbAdmin
             // 
             this.ckbAdmin.AutoSize = true;
+            this.ckbAdmin.Checked = true;
+            this.ckbAdmin.CheckState = System.Windows.Forms.CheckState.Checked;
             this.ckbAdmin.Location = new System.Drawing.Point(350, 259);
             this.ckbAdmin.Name = "ckbAdmin";
             this.ckbAdmin.Size = new System.Drawing.Size(55, 17);

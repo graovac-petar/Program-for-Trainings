@@ -23,16 +23,24 @@ namespace Common.Model
         {
             return NaziTreninga;
         }
+        public override bool Equals(object obj)
+        {
+            return obj is Trening trening &&
+                   NaziTreninga == trening.NaziTreninga &&
+                   OpisTreninga == trening.OpisTreninga &&
+                   TrajanjeUMinutima == trening.TrajanjeUMinutima &&
+                   DanUNedelji == trening.DanUNedelji;
+        }
         [Browsable(false)]
         public string TableName => "Trening";
         [Browsable(false)]
-        public string InsertValues => $"'{NaziTreninga}','{OpisTreninga}',{TrajanjeUMinutima},{DanUNedelji},{ProgramTreningaId}";
+        public string InsertValues => $"'{NaziTreninga}','{OpisTreninga}',{TrajanjeUMinutima},{(int)DanUNedelji},{ProgramTreninga.ProgramTreningaId}";
         [Browsable(false)]
         public string UpdateValues => $"'{NaziTreninga}','{OpisTreninga}',{TrajanjeUMinutima},{DanUNedelji},{ProgramTreningaId}";
         [Browsable(false)]
         public string Join => "join programtreninga pt on pt.programtreningaid=trening.programtreningaid";
         [Browsable(false)]
-        public string PrimaryKeyName => "treningId";
+        public string PrimaryKeyName => null;
 
         public List<IEntity> GetList(SqlDataReader reader)
         {
@@ -68,5 +76,7 @@ namespace Common.Model
 
             return treninzi;
         }
+
+
     }
 }

@@ -32,11 +32,10 @@
             this.programTreningaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.kreirajToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.izmeniToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.prijaveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.kreirajToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.izmeniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.izmeniPrijaveToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.odjaviSeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.grupaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.krairajToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.izmeniToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnlGlavna = new System.Windows.Forms.Panel();
             this.msAdministrator.SuspendLayout();
             this.SuspendLayout();
@@ -46,11 +45,12 @@
             this.msAdministrator.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.msAdministrator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.programTreningaToolStripMenuItem,
-            this.prijaveToolStripMenuItem,
-            this.odjaviSeToolStripMenuItem});
+            this.odjaviSeToolStripMenuItem,
+            this.grupaToolStripMenuItem});
             this.msAdministrator.Location = new System.Drawing.Point(0, 0);
             this.msAdministrator.Name = "msAdministrator";
-            this.msAdministrator.Size = new System.Drawing.Size(1284, 24);
+            this.msAdministrator.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.msAdministrator.Size = new System.Drawing.Size(963, 24);
             this.msAdministrator.TabIndex = 0;
             this.msAdministrator.Text = "menuStrip1";
             // 
@@ -66,42 +66,14 @@
             // kreirajToolStripMenuItem1
             // 
             this.kreirajToolStripMenuItem1.Name = "kreirajToolStripMenuItem1";
-            this.kreirajToolStripMenuItem1.Size = new System.Drawing.Size(109, 22);
+            this.kreirajToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.kreirajToolStripMenuItem1.Text = "Kreiraj";
             // 
             // izmeniToolStripMenuItem1
             // 
             this.izmeniToolStripMenuItem1.Name = "izmeniToolStripMenuItem1";
-            this.izmeniToolStripMenuItem1.Size = new System.Drawing.Size(109, 22);
+            this.izmeniToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.izmeniToolStripMenuItem1.Text = "Izmeni";
-            // 
-            // prijaveToolStripMenuItem
-            // 
-            this.prijaveToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.kreirajToolStripMenuItem,
-            this.izmeniToolStripMenuItem,
-            this.izmeniPrijaveToolStripMenuItem});
-            this.prijaveToolStripMenuItem.Name = "prijaveToolStripMenuItem";
-            this.prijaveToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
-            this.prijaveToolStripMenuItem.Text = "Prijave";
-            // 
-            // kreirajToolStripMenuItem
-            // 
-            this.kreirajToolStripMenuItem.Name = "kreirajToolStripMenuItem";
-            this.kreirajToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
-            this.kreirajToolStripMenuItem.Text = "Pogledaj prijave";
-            // 
-            // izmeniToolStripMenuItem
-            // 
-            this.izmeniToolStripMenuItem.Name = "izmeniToolStripMenuItem";
-            this.izmeniToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
-            this.izmeniToolStripMenuItem.Text = "Rasporedi prijave";
-            // 
-            // izmeniPrijaveToolStripMenuItem
-            // 
-            this.izmeniPrijaveToolStripMenuItem.Name = "izmeniPrijaveToolStripMenuItem";
-            this.izmeniPrijaveToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
-            this.izmeniPrijaveToolStripMenuItem.Text = "Izmeni prijave";
             // 
             // odjaviSeToolStripMenuItem
             // 
@@ -111,24 +83,43 @@
             this.odjaviSeToolStripMenuItem.Text = "Odjavi se";
             this.odjaviSeToolStripMenuItem.Click += new System.EventHandler(this.odjaviSeToolStripMenuItem_Click);
             // 
+            // grupaToolStripMenuItem
+            // 
+            this.grupaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.krairajToolStripMenuItem,
+            this.izmeniToolStripMenuItem});
+            this.grupaToolStripMenuItem.Name = "grupaToolStripMenuItem";
+            this.grupaToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
+            this.grupaToolStripMenuItem.Text = "Grupa";
+            // 
+            // krairajToolStripMenuItem
+            // 
+            this.krairajToolStripMenuItem.Name = "krairajToolStripMenuItem";
+            this.krairajToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.krairajToolStripMenuItem.Text = "Krairaj";
+            // 
+            // izmeniToolStripMenuItem
+            // 
+            this.izmeniToolStripMenuItem.Name = "izmeniToolStripMenuItem";
+            this.izmeniToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.izmeniToolStripMenuItem.Text = "Izmeni";
+            // 
             // pnlGlavna
             // 
             this.pnlGlavna.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlGlavna.Location = new System.Drawing.Point(0, 24);
-            this.pnlGlavna.Margin = new System.Windows.Forms.Padding(4);
             this.pnlGlavna.Name = "pnlGlavna";
-            this.pnlGlavna.Size = new System.Drawing.Size(1284, 880);
+            this.pnlGlavna.Size = new System.Drawing.Size(963, 710);
             this.pnlGlavna.TabIndex = 1;
             // 
             // FrmAdministrator
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1284, 904);
+            this.ClientSize = new System.Drawing.Size(963, 734);
             this.Controls.Add(this.pnlGlavna);
             this.Controls.Add(this.msAdministrator);
             this.MainMenuStrip = this.msAdministrator;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmAdministrator";
             this.Text = "FrmAdministrator";
             this.msAdministrator.ResumeLayout(false);
@@ -142,13 +133,12 @@
 
         private System.Windows.Forms.MenuStrip msAdministrator;
         private System.Windows.Forms.ToolStripMenuItem programTreningaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem prijaveToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem odjaviSeToolStripMenuItem;
         private System.Windows.Forms.Panel pnlGlavna;
         private System.Windows.Forms.ToolStripMenuItem kreirajToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem izmeniToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem kreirajToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem grupaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem krairajToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem izmeniToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem izmeniPrijaveToolStripMenuItem;
     }
 }

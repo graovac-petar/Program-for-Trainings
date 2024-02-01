@@ -19,7 +19,6 @@ namespace Server
             receiver = new Receiver(socket);
         }
 
-        //zaustavi soket
         public void StopSocket()
         {
             socket.Close();
@@ -115,7 +114,24 @@ namespace Server
                     res.Data = Controller.Instance.VratiProgramTreninga((ProgramTreninga)req.Body);
                     res.Message = "Uspesno vracen program treninga";
                 }
+                else if (req.Operation == Operation.IzmeniProgramTreninga)
+                {
+                    Controller.Instance.IzmeniProgramTreninga((ProgramTreninga)req.Body);
+                    res.Message = "Uspesno update-ovan";
+                }
+                else if (req.Operation == Operation.ObrisiProgramTreninga)
+                {
+                    Controller.Instance.ObrisiProgramTreninga((ProgramTreninga)req.Body);
+                    res.Message = "Uspesno obrisan";
+                }
+                else if (req.Operation == Operation.KreirajProgramTreninga)
+                {
+                    Controller.Instance.KreirajProgramTreninga((ProgramTreninga)req.Body);
+                    res.Message = "Uspesno napravljen";
+                }
+
                 #endregion
+
                 #region Trening
                 else if (req.Operation == Operation.VratiTreninge)
                 {
@@ -123,6 +139,7 @@ namespace Server
                     res.Message = "Uspesno vraceni treninzi";
                 }
                 #endregion
+
                 #region Prijava
                 else if (req.Operation == Operation.VratiPrijavuZaProgramTreninga)
                 {
@@ -138,6 +155,54 @@ namespace Server
                 {
                     res.Data = Controller.Instance.VratiPrijaveZaKorisnuka((Korisnik)req.Body);
                     res.Message = "Uspesno vracene prijave";
+                }
+                else if (req.Operation == Operation.VratiPrijaveZaGrupu)
+                {
+                    res.Data = Controller.Instance.VratiPrijavezaGrupu((Grupa)req.Body);
+                    res.Message = "Uspesno vracene prijave";
+                }
+                else if (req.Operation == Operation.VratiPrijaveVanGrupe)
+                {
+                    res.Data = Controller.Instance.VratiPrijaveVanGrupe((Grupa)req.Body);
+                    res.Message = "Uspesno vracene prijave";
+                }
+                else if (req.Operation == Operation.VratiPrijaveZaProgramTreninga)
+                {
+                    res.Data = Controller.Instance.VratiPrijaveZaProgramTreninga((ProgramTreninga)req.Body);
+                    res.Message = "Uspesno vracena grupa";
+                }
+                #endregion
+
+                #region Grupa
+                else if (req.Operation == Operation.KreirajGrupu)
+                {
+                    Controller.Instance.KreirajGrupu((Grupa)req.Body);
+                    res.Message = "Uspesno napravljena grupa";
+                }
+                else if (req.Operation == Operation.VratiSveGrupe)
+                {
+                    res.Data = Controller.Instance.VratiSveGrupe();
+                    res.Message = "Uspesno vracene grupe";
+                }
+                else if (req.Operation == Operation.PretraziGrupe)
+                {
+                    res.Data = Controller.Instance.PretraziGrupe((Grupa)req.Body);
+                    res.Message = "Uspesno vracene grupe";
+                }
+                else if (req.Operation == Operation.VratiGrupu)
+                {
+                    res.Data = Controller.Instance.VratiGrupu((Grupa)req.Body);
+                    res.Message = "Uspesno vracena grupa";
+                }
+                else if (req.Operation == Operation.IzmeniGrupu)
+                {
+                    Controller.Instance.IzmeniGrupu((Grupa)req.Body);
+                    res.Message = "Uspesno update-ovana grupa";
+                }
+                else if (req.Operation == Operation.ObrisiGrupu)
+                {
+                    Controller.Instance.ObrisiGrupu((Grupa)req.Body);
+                    res.Message = "Uspesno obrisana grupa";
                 }
                 #endregion
             }

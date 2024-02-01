@@ -12,6 +12,8 @@ namespace Client.Forms
             InitializeComponent();
             this.kreirajToolStripMenuItem1.Click += (s, e) => MainCoordinator.Instance.NapraviProgramTreningaAdministrator();
             this.izmeniToolStripMenuItem1.Click += (s, e) => MainCoordinator.Instance.PrikaziSveProgramTreningaAdministrator();
+            this.krairajToolStripMenuItem.Click += (s, e) => MainCoordinator.Instance.NapraviGrupuAdministrator();
+            this.izmeniToolStripMenuItem.Click += (s, e) => MainCoordinator.Instance.PrikaziSveGrupeAdministrator();
         }
         internal void PromeniPanel(Control control)
         {
@@ -26,10 +28,12 @@ namespace Client.Forms
             {
                 if (MainCoordinator.Instance.ulogovaniKorisnik != null)
                 {
+                    MainCoordinator.Instance.ulogovaniKorisnik = null;
                     ClientCommunication.instance.OdjaviSeKorisnik(MainCoordinator.Instance.ulogovaniKorisnik);
                 }
                 else if (MainCoordinator.Instance.ulogovaniAdministrator != null)
                 {
+                    MainCoordinator.Instance.ulogovaniAdministrator = null;
                     ClientCommunication.Instance.OdjaviSeAdministrator(MainCoordinator.Instance.ulogovaniAdministrator);
                 }
 

@@ -86,8 +86,29 @@ namespace Server
 
             return vratiProgramTreningaSystemOperation.programTreninga;
         }
-        #endregion ProgramTreninga
-        #region Treninge
+        internal void KreirajProgramTreninga(ProgramTreninga body)
+        {
+            KreirajProgramTreningaSystemOperation kreirajProgramTreningaSystemOperation = new KreirajProgramTreningaSystemOperation();
+            kreirajProgramTreningaSystemOperation.programTreninga = body;
+            kreirajProgramTreningaSystemOperation.Execute();
+
+        }
+        internal void IzmeniProgramTreninga(ProgramTreninga body)
+        {
+            IzmeniProgramTreningaSystemOperation izmeniProgramTreningaSystemOperation = new IzmeniProgramTreningaSystemOperation();
+            izmeniProgramTreningaSystemOperation.programTreninga = body;
+            izmeniProgramTreningaSystemOperation.Execute();
+        }
+        internal void ObrisiProgramTreninga(ProgramTreninga body)
+        {
+            ObrisiProgramTreningaSystemOperation obrisiProgramTreningaSystemOperation = new ObrisiProgramTreningaSystemOperation();
+            obrisiProgramTreningaSystemOperation.programTreninga = body;
+            obrisiProgramTreningaSystemOperation.Execute();
+        }
+
+        #endregion 
+
+        #region Trening
         internal List<Trening> VratiTreninge(ProgramTreninga body)
         {
             VratiTreningeSystemOperation vratiTreningeSystemOperation = new VratiTreningeSystemOperation();
@@ -98,7 +119,7 @@ namespace Server
         }
         #endregion
 
-        #region Treninge
+        #region Prijave
         internal Prijava VratiPrijavuZaProgramTreninga(Prijava body)
         {
             VratiPrijavuZaProgramTreningaSystemOperation vratiPrijavuZaProgramTreningaSystemOperation = new VratiPrijavuZaProgramTreningaSystemOperation();
@@ -122,6 +143,79 @@ namespace Server
             vratiSvePrijaveZaKorisnikaSystemOperation.Execute();
             return vratiSvePrijaveZaKorisnikaSystemOperation.listaPrijava;
 
+        }
+        internal List<Prijava> VratiPrijavezaGrupu(Grupa body)
+        {
+            VratiPrijavaZaGrupuSystemOperation vratiPrijavaZaGrupuSystemOperation = new VratiPrijavaZaGrupuSystemOperation();
+            vratiPrijavaZaGrupuSystemOperation.Grupa = body;
+            vratiPrijavaZaGrupuSystemOperation.Execute();
+
+            return vratiPrijavaZaGrupuSystemOperation.prijave;
+        }
+        internal List<Prijava> VratiPrijaveVanGrupe(Grupa body)
+        {
+            VratiPrijaveVanGrupeSystemOperation vratiPrijaveVanGrupeSystemOperation = new VratiPrijaveVanGrupeSystemOperation();
+            vratiPrijaveVanGrupeSystemOperation.Grupa = body;
+            vratiPrijaveVanGrupeSystemOperation.Execute();
+
+            return vratiPrijaveVanGrupeSystemOperation.prijave;
+        }
+        #endregion
+
+        #region Grupa
+        internal List<Grupa> VratiSveGrupe()
+        {
+            VratiSveGrupeSystemOperation vratiSveGrupeSystemOperation = new VratiSveGrupeSystemOperation();
+            vratiSveGrupeSystemOperation.Execute();
+            return vratiSveGrupeSystemOperation.grupe;
+        }
+
+        internal List<Grupa> PretraziGrupe(Grupa body)
+        {
+            PretraziGrupeSystemOperation pretraziGrupeSystemOperation = new PretraziGrupeSystemOperation();
+            pretraziGrupeSystemOperation.grupa = body;
+            pretraziGrupeSystemOperation.Execute();
+
+            return pretraziGrupeSystemOperation.grupe;
+        }
+
+        internal Grupa VratiGrupu(Grupa body)
+        {
+            VratiGrupuSystemOperation vratiGrupuSystemOperation = new VratiGrupuSystemOperation();
+            vratiGrupuSystemOperation.Grupa = body;
+            vratiGrupuSystemOperation.Execute();
+
+            return vratiGrupuSystemOperation.Grupa;
+        }
+
+        internal void ObrisiGrupu(Grupa body)
+        {
+            ObrisiGrupuSystemOperation obrisiGrupuSystemOperation = new ObrisiGrupuSystemOperation();
+            obrisiGrupuSystemOperation.grupa = body;
+            obrisiGrupuSystemOperation.Execute();
+        }
+
+        internal List<Prijava> VratiPrijaveZaProgramTreninga(ProgramTreninga body)
+        {
+            VratiPrijaveZaProgramTreningaSystemOperation vratiPrijaveZaProgramTreningaSystemOperation = new VratiPrijaveZaProgramTreningaSystemOperation();
+            vratiPrijaveZaProgramTreningaSystemOperation.ProgramTreninga = body;
+            vratiPrijaveZaProgramTreningaSystemOperation.Execute();
+
+            return vratiPrijaveZaProgramTreningaSystemOperation.Prijave;
+        }
+
+        internal void KreirajGrupu(Grupa body)
+        {
+            KreirajGrupuSystemOperation kreirajGrupuSystemOperation = new KreirajGrupuSystemOperation();
+            kreirajGrupuSystemOperation.Grupa = body;
+            kreirajGrupuSystemOperation.Execute();
+        }
+
+        internal void IzmeniGrupu(Grupa body)
+        {
+            IzmeniGrupuSystemOperation izmeniGrupuSystemOperation = new IzmeniGrupuSystemOperation();
+            izmeniGrupuSystemOperation.Grupa = body;
+            izmeniGrupuSystemOperation.Execute();
         }
         #endregion
     }

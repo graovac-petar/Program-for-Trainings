@@ -91,7 +91,22 @@ namespace Client.GuiController
 
         internal void NapraviProgramTreningaAdministrator()
         {
-            frmAdministrator.PromeniPanel(programTreningaGuiController.KreirajUcIzmenaProgramTreninga(FormMode.Add));
+            frmAdministrator.PromeniPanel(programTreningaGuiController.KreirajUcIzmenaProgramTreninga(FormMode.Add, null));
+        }
+
+        internal void PrikaziSveGrupeAdministrator()
+        {
+            frmAdministrator.PromeniPanel(grupaGuiController.KreirajUcPrikazGrupaAdministrator());
+        }
+
+        internal void PrikaziPodatkeOgrupi(Grupa g)
+        {
+            frmAdministrator.PromeniPanel(grupaGuiController.KreirajUcPrikazGrupe(FormMode.Edit, g));
+        }
+
+        internal void NapraviGrupuAdministrator()
+        {
+            frmAdministrator.PromeniPanel(grupaGuiController.KreirajUcPrikazGrupe(FormMode.Add, null));
         }
     }
 }

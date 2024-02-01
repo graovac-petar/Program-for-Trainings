@@ -19,11 +19,16 @@ namespace Common.Model
             return NazivProgramaTreninga;
         }
         [Browsable(false)]
+        public List<Trening> TreninziZaDodavanje { get; set; }
+
+        [Browsable(false)]
+        public List<Trening> TreninziZaBrisanje { get; set; }
+        [Browsable(false)]
         public string TableName => "ProgramTreninga";
         [Browsable(false)]
         public string InsertValues => $"'{NazivProgramaTreninga}',{BrojTreningaNedeljno},{Cena},'{Opis}'";
         [Browsable(false)]
-        public string UpdateValues => $"'{NazivProgramaTreninga}',{BrojTreningaNedeljno},{Cena},'{Opis}'";
+        public string UpdateValues => $"nazivprogramatreninga='{NazivProgramaTreninga}',brojtreninganedeljno={BrojTreningaNedeljno},cena={Cena},Description='{Opis}'";
         [Browsable(false)]
         public string Join => "";
         [Browsable(false)]
@@ -44,7 +49,10 @@ namespace Common.Model
                     programTreninga.NazivProgramaTreninga = reader.GetString(1);
                     programTreninga.BrojTreningaNedeljno = reader.GetInt32(2);
                     programTreninga.Cena = reader.GetDouble(3);
-                    programTreninga.Opis = reader.GetString(4);
+                    if (!reader.IsDBNull(4))
+                        programTreninga.Opis = reader.GetString(4);
+                    else
+                        programTreninga.Opis = "";
 
                     programiTreninga.Add(programTreninga);
                 }

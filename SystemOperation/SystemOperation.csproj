@@ -41,13 +41,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="IzmeniGrupuSystemOperation.cs" />
+    <Compile Include="IzmeniProgramTreningaSystemOperation.cs" />
+    <Compile Include="KreirajGrupuSystemOperation.cs" />
+    <Compile Include="KreirajProgramTreningaSystemOperation.cs" />
+    <Compile Include="ObrisiGrupuSystemOperation.cs" />
+    <Compile Include="ObrisiProgramTreningaSystemOperation.cs" />
     <Compile Include="PosaljiPrijavuZaProgramTreningaSystemOperation.cs" />
+    <Compile Include="PretraziGrupeSystemOperation.cs" />
     <Compile Include="PretraziProgrameTreningaSystemOperation.cs" />
     <Compile Include="PrijaviSeAdministratorSystemOperation.cs" />
     <Compile Include="PrijaviSeKorisnikSystemOperation.cs" />
     <Compile Include="RegistrujSeSystemOperation.cs" />
     <Compile Include="SystemOperationBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="VratiGrupuSystemOperation.cs" />
+    <Compile Include="VratiPrijavaZaGrupuSystemOperation.cs" />
+    <Compile Include="VratiPrijaveVanGrupeSystemOperation.cs" />
+    <Compile Include="VratiPrijaveZaProgramTreningaSystemOperation.cs" />
+    <Compile Include="VratiSveGrupeSystemOperation.cs" />
     <Compile Include="VratiSvePrijaveZaKorisnikaSystemOperation.cs" />
     <Compile Include="VratiPrijavuZaProgramTreningaSystemOperation.cs" />
     <Compile Include="VratiProgramTreningaSystemOperation.cs" />
