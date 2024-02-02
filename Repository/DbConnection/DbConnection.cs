@@ -45,7 +45,6 @@ namespace Repository.DbConnection
         {
             konekcija?.Close();
             transakcija?.Dispose();
-            //transaction = null
         }
     }
 }

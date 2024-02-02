@@ -28,7 +28,7 @@ namespace Common.Model
         [Browsable(false)]
         public string InsertValues => $"{Korisnik.KorisnikId}, {ProgramTreninga.ProgramTreningaId}, '{DatumPrijave.ToString("yyyy-MM-dd HH:mm:ss")}' , '{Napomena}', {(UplacenaClanarina ? 1 : 0)}, " + (Grupa == null ? $"NULL" : $"'{Grupa.GrupaId}'");
         [Browsable(false)]
-        public string UpdateValues => $" grupaid='{Grupa.GrupaId}'";
+        public string UpdateValues => $"grupaid={(Grupa == null ? $"NULL" : $"'{Grupa.GrupaId}'")}";
         [Browsable(false)]
         public string Join => "left join grupa g on prijavazaprogram.grupaid=g.grupaid join programtreninga pt on prijavazaprogram.programtreningaid=pt.programtreningaid join korisnik kor on prijavazaprogram.korisnikid=kor.korisnikid";
         [Browsable(false)]
@@ -46,14 +46,17 @@ namespace Common.Model
                 }
                 while (reader.Read())
                 {
-                    ProgramTreninga pt = new ProgramTreninga()
-                    {
-                        ProgramTreningaId = reader.GetInt32(11),
-                        NazivProgramaTreninga = reader.GetString(12),
-                        BrojTreningaNedeljno = reader.GetInt32(13),
-                        Cena = reader.GetDouble(14),
-                        Opis = reader.GetString(15)
-                    };
+                    ProgramTreninga pt = new ProgramTreninga();
+
+                    pt.ProgramTreningaId = reader.GetInt32(11);
+                    pt.NazivProgramaTreninga = reader.GetString(12);
+                    pt.BrojTreningaNedeljno = reader.GetInt32(13);
+                    pt.Cena = reader.GetDouble(14);
+                    if (!reader.IsDBNull(15))
+                        pt.Opis = reader.GetString(15);
+                    else
+                        pt.Opis = "";
+
                     Korisnik korisnik = new Korisnik()
                     {
                         KorisnikId = reader.GetInt32(16),

@@ -53,99 +53,114 @@ namespace Client.UserControls
             this.lblGreskaDatumKraja = new System.Windows.Forms.Label();
             this.lvlGreskaProgramTreninga = new System.Windows.Forms.Label();
             this.lblGreskaDatumPocetka = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrijaveVanGrupe)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrijaveUGrupi)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Location = new System.Drawing.Point(335, 65);
+            this.lblTitle.Font = new System.Drawing.Font("Bahnschrift Condensed", 36F);
+            this.lblTitle.Location = new System.Drawing.Point(440, 39);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(66, 13);
+            this.lblTitle.Size = new System.Drawing.Size(236, 58);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Kreiraj grupu";
             // 
             // lblNazivGrupe
             // 
             this.lblNazivGrupe.AutoSize = true;
-            this.lblNazivGrupe.Location = new System.Drawing.Point(120, 129);
+            this.lblNazivGrupe.Font = new System.Drawing.Font("Bahnschrift", 21.75F);
+            this.lblNazivGrupe.Location = new System.Drawing.Point(13, 130);
             this.lblNazivGrupe.Name = "lblNazivGrupe";
-            this.lblNazivGrupe.Size = new System.Drawing.Size(64, 13);
+            this.lblNazivGrupe.Size = new System.Drawing.Size(170, 35);
             this.lblNazivGrupe.TabIndex = 1;
             this.lblNazivGrupe.Text = "Naziv grupe";
             // 
             // lblDatumPocetka
             // 
             this.lblDatumPocetka.AutoSize = true;
-            this.lblDatumPocetka.Location = new System.Drawing.Point(424, 136);
+            this.lblDatumPocetka.Font = new System.Drawing.Font("Bahnschrift", 21.75F);
+            this.lblDatumPocetka.Location = new System.Drawing.Point(569, 135);
             this.lblDatumPocetka.Name = "lblDatumPocetka";
-            this.lblDatumPocetka.Size = new System.Drawing.Size(81, 13);
+            this.lblDatumPocetka.Size = new System.Drawing.Size(209, 35);
             this.lblDatumPocetka.TabIndex = 3;
             this.lblDatumPocetka.Text = "Datum Pocetka";
             // 
             // lblDatumKraja
             // 
             this.lblDatumKraja.AutoSize = true;
-            this.lblDatumKraja.Location = new System.Drawing.Point(424, 189);
+            this.lblDatumKraja.Font = new System.Drawing.Font("Bahnschrift", 21.75F);
+            this.lblDatumKraja.Location = new System.Drawing.Point(569, 203);
             this.lblDatumKraja.Name = "lblDatumKraja";
-            this.lblDatumKraja.Size = new System.Drawing.Size(65, 13);
+            this.lblDatumKraja.Size = new System.Drawing.Size(176, 35);
             this.lblDatumKraja.TabIndex = 4;
             this.lblDatumKraja.Text = "Datum Kraja";
             // 
             // txtNazivGrupe
             // 
-            this.txtNazivGrupe.Location = new System.Drawing.Point(214, 129);
+            this.txtNazivGrupe.Font = new System.Drawing.Font("Bahnschrift", 16F);
+            this.txtNazivGrupe.Location = new System.Drawing.Point(189, 135);
             this.txtNazivGrupe.Name = "txtNazivGrupe";
-            this.txtNazivGrupe.Size = new System.Drawing.Size(166, 20);
+            this.txtNazivGrupe.Size = new System.Drawing.Size(362, 33);
             this.txtNazivGrupe.TabIndex = 5;
             // 
             // dtpPocetak
             // 
-            this.dtpPocetak.Location = new System.Drawing.Point(511, 136);
+            this.dtpPocetak.Font = new System.Drawing.Font("Bahnschrift", 16F);
+            this.dtpPocetak.Location = new System.Drawing.Point(784, 137);
             this.dtpPocetak.Name = "dtpPocetak";
-            this.dtpPocetak.Size = new System.Drawing.Size(200, 20);
+            this.dtpPocetak.Size = new System.Drawing.Size(344, 33);
             this.dtpPocetak.TabIndex = 6;
             // 
             // dtpKraj
             // 
-            this.dtpKraj.Location = new System.Drawing.Point(511, 189);
+            this.dtpKraj.Font = new System.Drawing.Font("Bahnschrift", 16F);
+            this.dtpKraj.Location = new System.Drawing.Point(784, 203);
             this.dtpKraj.Name = "dtpKraj";
-            this.dtpKraj.Size = new System.Drawing.Size(200, 20);
+            this.dtpKraj.Size = new System.Drawing.Size(344, 33);
             this.dtpKraj.TabIndex = 7;
             // 
             // lblProgramTreninga
             // 
             this.lblProgramTreninga.AutoSize = true;
-            this.lblProgramTreninga.Location = new System.Drawing.Point(120, 195);
+            this.lblProgramTreninga.Font = new System.Drawing.Font("Bahnschrift", 21.75F);
+            this.lblProgramTreninga.Location = new System.Drawing.Point(13, 214);
             this.lblProgramTreninga.Name = "lblProgramTreninga";
-            this.lblProgramTreninga.Size = new System.Drawing.Size(88, 13);
+            this.lblProgramTreninga.Size = new System.Drawing.Size(238, 35);
             this.lblProgramTreninga.TabIndex = 8;
             this.lblProgramTreninga.Text = "ProgramTreninga";
             // 
             // cbProgramTreninga
             // 
+            this.cbProgramTreninga.Font = new System.Drawing.Font("Bahnschrift", 16F);
             this.cbProgramTreninga.FormattingEnabled = true;
-            this.cbProgramTreninga.Location = new System.Drawing.Point(214, 188);
+            this.cbProgramTreninga.Location = new System.Drawing.Point(257, 214);
             this.cbProgramTreninga.Name = "cbProgramTreninga";
-            this.cbProgramTreninga.Size = new System.Drawing.Size(166, 21);
+            this.cbProgramTreninga.Size = new System.Drawing.Size(294, 33);
             this.cbProgramTreninga.TabIndex = 9;
             // 
             // lblPrijaveVanGrupeZaPt
             // 
             this.lblPrijaveVanGrupeZaPt.AutoSize = true;
-            this.lblPrijaveVanGrupeZaPt.Location = new System.Drawing.Point(56, 261);
+            this.lblPrijaveVanGrupeZaPt.Font = new System.Drawing.Font("Bahnschrift", 21.75F);
+            this.lblPrijaveVanGrupeZaPt.Location = new System.Drawing.Point(13, 289);
             this.lblPrijaveVanGrupeZaPt.Name = "lblPrijaveVanGrupeZaPt";
-            this.lblPrijaveVanGrupeZaPt.Size = new System.Drawing.Size(186, 13);
+            this.lblPrijaveVanGrupeZaPt.Size = new System.Drawing.Size(515, 35);
             this.lblPrijaveVanGrupeZaPt.TabIndex = 10;
             this.lblPrijaveVanGrupeZaPt.Text = "Prijave van grupe za program treninga";
             // 
             // lblPrijaveUGrupiZaProgramTreninga
             // 
             this.lblPrijaveUGrupiZaProgramTreninga.AutoSize = true;
-            this.lblPrijaveUGrupiZaProgramTreninga.Location = new System.Drawing.Point(472, 261);
+            this.lblPrijaveUGrupiZaProgramTreninga.Font = new System.Drawing.Font("Bahnschrift", 21.75F);
+            this.lblPrijaveUGrupiZaProgramTreninga.Location = new System.Drawing.Point(613, 289);
             this.lblPrijaveUGrupiZaProgramTreninga.Name = "lblPrijaveUGrupiZaProgramTreninga";
-            this.lblPrijaveUGrupiZaProgramTreninga.Size = new System.Drawing.Size(170, 13);
+            this.lblPrijaveUGrupiZaProgramTreninga.Size = new System.Drawing.Size(476, 35);
             this.lblPrijaveUGrupiZaProgramTreninga.TabIndex = 11;
             this.lblPrijaveUGrupiZaProgramTreninga.Text = "Prijave u grupi za program treninga";
             // 
@@ -153,66 +168,82 @@ namespace Client.UserControls
             // 
             this.dgvPrijaveVanGrupe.AllowUserToAddRows = false;
             this.dgvPrijaveVanGrupe.AllowUserToDeleteRows = false;
+            this.dgvPrijaveVanGrupe.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvPrijaveVanGrupe.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvPrijaveVanGrupe.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPrijaveVanGrupe.Location = new System.Drawing.Point(59, 300);
+            this.dgvPrijaveVanGrupe.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvPrijaveVanGrupe.Location = new System.Drawing.Point(0, 0);
             this.dgvPrijaveVanGrupe.Name = "dgvPrijaveVanGrupe";
             this.dgvPrijaveVanGrupe.ReadOnly = true;
-            this.dgvPrijaveVanGrupe.Size = new System.Drawing.Size(291, 206);
+            this.dgvPrijaveVanGrupe.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPrijaveVanGrupe.Size = new System.Drawing.Size(509, 349);
             this.dgvPrijaveVanGrupe.TabIndex = 12;
             // 
             // dgvPrijaveUGrupi
             // 
             this.dgvPrijaveUGrupi.AllowUserToAddRows = false;
             this.dgvPrijaveUGrupi.AllowUserToDeleteRows = false;
+            this.dgvPrijaveUGrupi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvPrijaveUGrupi.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dgvPrijaveUGrupi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPrijaveUGrupi.Location = new System.Drawing.Point(466, 300);
+            this.dgvPrijaveUGrupi.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvPrijaveUGrupi.Location = new System.Drawing.Point(0, 0);
             this.dgvPrijaveUGrupi.Name = "dgvPrijaveUGrupi";
             this.dgvPrijaveUGrupi.ReadOnly = true;
-            this.dgvPrijaveUGrupi.Size = new System.Drawing.Size(291, 206);
+            this.dgvPrijaveUGrupi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPrijaveUGrupi.Size = new System.Drawing.Size(509, 349);
             this.dgvPrijaveUGrupi.TabIndex = 13;
             // 
             // btnIzbaci
             // 
-            this.btnIzbaci.Location = new System.Drawing.Point(373, 352);
+            this.btnIzbaci.Font = new System.Drawing.Font("Arial Nova", 24F, System.Drawing.FontStyle.Bold);
+            this.btnIzbaci.Location = new System.Drawing.Point(531, 447);
             this.btnIzbaci.Name = "btnIzbaci";
-            this.btnIzbaci.Size = new System.Drawing.Size(75, 23);
+            this.btnIzbaci.Size = new System.Drawing.Size(82, 63);
             this.btnIzbaci.TabIndex = 14;
             this.btnIzbaci.Text = "<--";
             this.btnIzbaci.UseVisualStyleBackColor = true;
             // 
             // btnUbaci
             // 
-            this.btnUbaci.Location = new System.Drawing.Point(373, 408);
+            this.btnUbaci.Font = new System.Drawing.Font("Arial Nova", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUbaci.Location = new System.Drawing.Point(531, 539);
             this.btnUbaci.Name = "btnUbaci";
-            this.btnUbaci.Size = new System.Drawing.Size(75, 23);
+            this.btnUbaci.Size = new System.Drawing.Size(82, 63);
             this.btnUbaci.TabIndex = 15;
             this.btnUbaci.Text = "-->";
             this.btnUbaci.UseVisualStyleBackColor = true;
             // 
             // btnSacuvaj
             // 
-            this.btnSacuvaj.Location = new System.Drawing.Point(532, 538);
+            this.btnSacuvaj.BackColor = System.Drawing.Color.DarkRed;
+            this.btnSacuvaj.Font = new System.Drawing.Font("Bahnschrift", 19.75F);
+            this.btnSacuvaj.Location = new System.Drawing.Point(769, 730);
             this.btnSacuvaj.Name = "btnSacuvaj";
-            this.btnSacuvaj.Size = new System.Drawing.Size(156, 71);
+            this.btnSacuvaj.Size = new System.Drawing.Size(250, 71);
             this.btnSacuvaj.TabIndex = 16;
             this.btnSacuvaj.Text = "Sacuvaj";
-            this.btnSacuvaj.UseVisualStyleBackColor = true;
+            this.btnSacuvaj.UseVisualStyleBackColor = false;
             // 
             // btnObrisi
             // 
-            this.btnObrisi.Location = new System.Drawing.Point(86, 538);
+            this.btnObrisi.BackColor = System.Drawing.Color.DarkRed;
+            this.btnObrisi.Font = new System.Drawing.Font("Bahnschrift", 19.75F);
+            this.btnObrisi.Location = new System.Drawing.Point(133, 730);
             this.btnObrisi.Name = "btnObrisi";
-            this.btnObrisi.Size = new System.Drawing.Size(156, 71);
+            this.btnObrisi.Size = new System.Drawing.Size(250, 71);
             this.btnObrisi.TabIndex = 17;
             this.btnObrisi.Text = "Obrisi grupu";
-            this.btnObrisi.UseVisualStyleBackColor = true;
+            this.btnObrisi.UseVisualStyleBackColor = false;
             // 
             // lblGreskaVanGrupe
             // 
             this.lblGreskaVanGrupe.AutoSize = true;
-            this.lblGreskaVanGrupe.Location = new System.Drawing.Point(56, 509);
+            this.lblGreskaVanGrupe.Font = new System.Drawing.Font("Bahnschrift", 12F);
+            this.lblGreskaVanGrupe.ForeColor = System.Drawing.Color.Red;
+            this.lblGreskaVanGrupe.Location = new System.Drawing.Point(14, 699);
             this.lblGreskaVanGrupe.Name = "lblGreskaVanGrupe";
-            this.lblGreskaVanGrupe.Size = new System.Drawing.Size(29, 13);
+            this.lblGreskaVanGrupe.Size = new System.Drawing.Size(46, 19);
             this.lblGreskaVanGrupe.TabIndex = 18;
             this.lblGreskaVanGrupe.Text = "label";
             this.lblGreskaVanGrupe.Visible = false;
@@ -220,9 +251,11 @@ namespace Client.UserControls
             // lblGreskaPrijaveUGrupi
             // 
             this.lblGreskaPrijaveUGrupi.AutoSize = true;
-            this.lblGreskaPrijaveUGrupi.Location = new System.Drawing.Point(463, 509);
+            this.lblGreskaPrijaveUGrupi.Font = new System.Drawing.Font("Bahnschrift", 12F);
+            this.lblGreskaPrijaveUGrupi.ForeColor = System.Drawing.Color.Red;
+            this.lblGreskaPrijaveUGrupi.Location = new System.Drawing.Point(614, 699);
             this.lblGreskaPrijaveUGrupi.Name = "lblGreskaPrijaveUGrupi";
-            this.lblGreskaPrijaveUGrupi.Size = new System.Drawing.Size(29, 13);
+            this.lblGreskaPrijaveUGrupi.Size = new System.Drawing.Size(46, 19);
             this.lblGreskaPrijaveUGrupi.TabIndex = 19;
             this.lblGreskaPrijaveUGrupi.Text = "label";
             this.lblGreskaPrijaveUGrupi.Visible = false;
@@ -230,9 +263,11 @@ namespace Client.UserControls
             // lblGreskaNazivGrupe
             // 
             this.lblGreskaNazivGrupe.AutoSize = true;
-            this.lblGreskaNazivGrupe.Location = new System.Drawing.Point(211, 152);
+            this.lblGreskaNazivGrupe.Font = new System.Drawing.Font("Bahnschrift", 12F);
+            this.lblGreskaNazivGrupe.ForeColor = System.Drawing.Color.Red;
+            this.lblGreskaNazivGrupe.Location = new System.Drawing.Point(185, 171);
             this.lblGreskaNazivGrupe.Name = "lblGreskaNazivGrupe";
-            this.lblGreskaNazivGrupe.Size = new System.Drawing.Size(29, 13);
+            this.lblGreskaNazivGrupe.Size = new System.Drawing.Size(46, 19);
             this.lblGreskaNazivGrupe.TabIndex = 20;
             this.lblGreskaNazivGrupe.Text = "label\r\n";
             this.lblGreskaNazivGrupe.Visible = false;
@@ -240,9 +275,11 @@ namespace Client.UserControls
             // lblGreskaDatumKraja
             // 
             this.lblGreskaDatumKraja.AutoSize = true;
-            this.lblGreskaDatumKraja.Location = new System.Drawing.Point(508, 212);
+            this.lblGreskaDatumKraja.Font = new System.Drawing.Font("Bahnschrift", 12F);
+            this.lblGreskaDatumKraja.ForeColor = System.Drawing.Color.Red;
+            this.lblGreskaDatumKraja.Location = new System.Drawing.Point(780, 239);
             this.lblGreskaDatumKraja.Name = "lblGreskaDatumKraja";
-            this.lblGreskaDatumKraja.Size = new System.Drawing.Size(29, 13);
+            this.lblGreskaDatumKraja.Size = new System.Drawing.Size(46, 19);
             this.lblGreskaDatumKraja.TabIndex = 21;
             this.lblGreskaDatumKraja.Text = "label";
             this.lblGreskaDatumKraja.Visible = false;
@@ -250,9 +287,11 @@ namespace Client.UserControls
             // lvlGreskaProgramTreninga
             // 
             this.lvlGreskaProgramTreninga.AutoSize = true;
-            this.lvlGreskaProgramTreninga.Location = new System.Drawing.Point(211, 212);
+            this.lvlGreskaProgramTreninga.Font = new System.Drawing.Font("Bahnschrift", 12F);
+            this.lvlGreskaProgramTreninga.ForeColor = System.Drawing.Color.Red;
+            this.lvlGreskaProgramTreninga.Location = new System.Drawing.Point(253, 250);
             this.lvlGreskaProgramTreninga.Name = "lvlGreskaProgramTreninga";
-            this.lvlGreskaProgramTreninga.Size = new System.Drawing.Size(29, 13);
+            this.lvlGreskaProgramTreninga.Size = new System.Drawing.Size(46, 19);
             this.lvlGreskaProgramTreninga.TabIndex = 22;
             this.lvlGreskaProgramTreninga.Text = "label";
             this.lvlGreskaProgramTreninga.Visible = false;
@@ -260,17 +299,39 @@ namespace Client.UserControls
             // lblGreskaDatumPocetka
             // 
             this.lblGreskaDatumPocetka.AutoSize = true;
-            this.lblGreskaDatumPocetka.Location = new System.Drawing.Point(508, 159);
+            this.lblGreskaDatumPocetka.Font = new System.Drawing.Font("Bahnschrift", 12F);
+            this.lblGreskaDatumPocetka.ForeColor = System.Drawing.Color.Red;
+            this.lblGreskaDatumPocetka.Location = new System.Drawing.Point(780, 173);
             this.lblGreskaDatumPocetka.Name = "lblGreskaDatumPocetka";
-            this.lblGreskaDatumPocetka.Size = new System.Drawing.Size(29, 13);
+            this.lblGreskaDatumPocetka.Size = new System.Drawing.Size(46, 19);
             this.lblGreskaDatumPocetka.TabIndex = 23;
             this.lblGreskaDatumPocetka.Text = "label";
             this.lblGreskaDatumPocetka.Visible = false;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.dgvPrijaveVanGrupe);
+            this.panel1.Font = new System.Drawing.Font("Bahnschrift", 12F);
+            this.panel1.Location = new System.Drawing.Point(19, 347);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(509, 349);
+            this.panel1.TabIndex = 24;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.dgvPrijaveUGrupi);
+            this.panel2.Font = new System.Drawing.Font("Bahnschrift", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panel2.Location = new System.Drawing.Point(619, 347);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(509, 349);
+            this.panel2.TabIndex = 25;
             // 
             // UcKreirajGrupu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.lblGreskaDatumPocetka);
             this.Controls.Add(this.lvlGreskaProgramTreninga);
             this.Controls.Add(this.lblGreskaDatumKraja);
@@ -281,8 +342,6 @@ namespace Client.UserControls
             this.Controls.Add(this.btnSacuvaj);
             this.Controls.Add(this.btnUbaci);
             this.Controls.Add(this.btnIzbaci);
-            this.Controls.Add(this.dgvPrijaveUGrupi);
-            this.Controls.Add(this.dgvPrijaveVanGrupe);
             this.Controls.Add(this.lblPrijaveUGrupiZaProgramTreninga);
             this.Controls.Add(this.lblPrijaveVanGrupeZaPt);
             this.Controls.Add(this.cbProgramTreninga);
@@ -295,9 +354,11 @@ namespace Client.UserControls
             this.Controls.Add(this.lblNazivGrupe);
             this.Controls.Add(this.lblTitle);
             this.Name = "UcKreirajGrupu";
-            this.Size = new System.Drawing.Size(793, 652);
+            this.Size = new System.Drawing.Size(1163, 884);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrijaveVanGrupe)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPrijaveUGrupi)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -328,6 +389,8 @@ namespace Client.UserControls
         private Label lblGreskaDatumKraja;
         private Label lvlGreskaProgramTreninga;
         private Label lblGreskaDatumPocetka;
+        private Panel panel1;
+        private Panel panel2;
 
         public Label LblTitle { get => lblTitle; set => lblTitle = value; }
         public Label LblNazivGrupe { get => lblNazivGrupe; set => lblNazivGrupe = value; }

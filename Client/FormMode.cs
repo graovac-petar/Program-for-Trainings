@@ -6,6 +6,6 @@
         Edit,
         ChooseAdmin,
         ChooseKorisnik,
-        ReadOnly
+
     }
 }

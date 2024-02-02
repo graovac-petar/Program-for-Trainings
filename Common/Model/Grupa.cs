@@ -29,11 +29,11 @@ namespace Common.Model
         [Browsable(false)]
         public string TableName => "Grupa";
         [Browsable(false)]
-        public string InsertValues => $"{NazivGrupe},'{DatumPocetka.ToString("yyyy-MM-dd")}','{DatumKraja.ToString("yyyy-MM-dd")}',{ProgramTreninga.ProgramTreningaId}";
+        public string InsertValues => $"'{NazivGrupe}','{DatumPocetka.ToString("yyyy-MM-dd")}','{DatumKraja.ToString("yyyy-MM-dd")}',{ProgramTreninga.ProgramTreningaId}";
         [Browsable(false)]
-        public string UpdateValues => $" nazivgrupe='{NazivGrupe}', datumpocetkakursa='{DatumPocetka.ToString("yyyy-MM-dd")}', programtreningaid='{ProgramTreninga.ProgramTreningaId}'";
+        public string UpdateValues => $" nazivgrupe='{NazivGrupe}', datumpocetka='{DatumPocetka.ToString("yyyy-MM-dd")}', programtreningaid='{ProgramTreninga.ProgramTreningaId}'";
         [Browsable(false)]
-        public string Join => "join programtreninga pt on grupa.programtreningaId=pt.programTreningaId left join prijavazaprogram p on grupa.grupaid=p.grupaid";
+        public string Join => "join programtreninga pt on grupa.programtreningaId=pt.programTreningaId";
         [Browsable(false)]
         public string PrimaryKeyName => "GrupaId";
         [Browsable(false)]
@@ -55,16 +55,15 @@ namespace Common.Model
                 }
                 while (reader.Read())
                 {
-                    ProgramTreninga programTreninga = new ProgramTreninga()
-                    {
-                        ProgramTreningaId = reader.GetInt32(5),
-                        NazivProgramaTreninga = reader.GetString(6),
-                        BrojTreningaNedeljno = reader.GetInt32(7),
-                        Cena = reader.GetDouble(8),
-                        Opis = reader.GetString(9),
-
-
-                    };
+                    ProgramTreninga programTreninga = new ProgramTreninga();
+                    programTreninga.ProgramTreningaId = reader.GetInt32(5);
+                    programTreninga.NazivProgramaTreninga = reader.GetString(6);
+                    programTreninga.BrojTreningaNedeljno = reader.GetInt32(7);
+                    programTreninga.Cena = reader.GetDouble(8);
+                    if (!reader.IsDBNull(9))
+                        programTreninga.Opis = reader.GetString(9);
+                    else
+                        programTreninga.Opis = "";
                     Grupa grupa = new Grupa()
                     {
                         GrupaId = reader.GetInt32(0),

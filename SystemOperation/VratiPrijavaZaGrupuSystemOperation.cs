@@ -10,7 +10,7 @@ namespace SystemOperation
         public List<Prijava> prijave;
         protected override void ExecuteConcreteOperation()
         {
-            prijave = repository.Search(new Prijava(), $"g.GrupaId={Grupa.GrupaId}").Cast<Prijava>().ToList();
+            prijave = repository.Search(new Prijava(), $"prijavazaprogram.GrupaId={Grupa.GrupaId}").Cast<Prijava>().ToList();
         }
     }
 }

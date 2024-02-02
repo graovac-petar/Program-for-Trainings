@@ -40,6 +40,8 @@ namespace Client.UserControls
             this.txtOpis = new System.Windows.Forms.TextBox();
             this.txtCena = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.dgvTreninzi = new System.Windows.Forms.DataGridView();
             this.lblGreskaBrisanje = new System.Windows.Forms.Label();
             this.lblGreskaDanUNedelji = new System.Windows.Forms.Label();
             this.lblGreskaTrajanje = new System.Windows.Forms.Label();
@@ -55,7 +57,6 @@ namespace Client.UserControls
             this.lblTrajanje = new System.Windows.Forms.Label();
             this.lblOpisTreninga = new System.Windows.Forms.Label();
             this.lblNazivTreninga = new System.Windows.Forms.Label();
-            this.dgvTreninzi = new System.Windows.Forms.DataGridView();
             this.btnSacuvaj = new System.Windows.Forms.Button();
             this.btnObrisi = new System.Windows.Forms.Button();
             this.lblGreskaNazivProgramaTreninga = new System.Windows.Forms.Label();
@@ -63,84 +64,95 @@ namespace Client.UserControls
             this.lblGreskaBrojTreningaNedeljno = new System.Windows.Forms.Label();
             this.lblGreskaCena = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
+            this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTreninzi)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Location = new System.Drawing.Point(257, 51);
+            this.lblTitle.Font = new System.Drawing.Font("Bahnschrift Condensed", 36F);
+            this.lblTitle.Location = new System.Drawing.Point(336, 21);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(123, 13);
+            this.lblTitle.Size = new System.Drawing.Size(429, 58);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Kreiraj Program Treninga";
             // 
             // lblNazivProgramaTreninga
             // 
             this.lblNazivProgramaTreninga.AutoSize = true;
-            this.lblNazivProgramaTreninga.Location = new System.Drawing.Point(68, 107);
+            this.lblNazivProgramaTreninga.Font = new System.Drawing.Font("Bahnschrift", 21.75F);
+            this.lblNazivProgramaTreninga.Location = new System.Drawing.Point(3, 110);
             this.lblNazivProgramaTreninga.Name = "lblNazivProgramaTreninga";
-            this.lblNazivProgramaTreninga.Size = new System.Drawing.Size(127, 13);
+            this.lblNazivProgramaTreninga.Size = new System.Drawing.Size(336, 35);
             this.lblNazivProgramaTreninga.TabIndex = 1;
-            this.lblNazivProgramaTreninga.Text = "Naziv Programa Treninga";
+            this.lblNazivProgramaTreninga.Text = "Naziv programa treninga";
             // 
             // lblBrojTreningaNedeljno
             // 
             this.lblBrojTreningaNedeljno.AutoSize = true;
-            this.lblBrojTreningaNedeljno.Location = new System.Drawing.Point(362, 104);
+            this.lblBrojTreningaNedeljno.Font = new System.Drawing.Font("Bahnschrift", 21.75F);
+            this.lblBrojTreningaNedeljno.Location = new System.Drawing.Point(613, 108);
             this.lblBrojTreningaNedeljno.Name = "lblBrojTreningaNedeljno";
-            this.lblBrojTreningaNedeljno.Size = new System.Drawing.Size(115, 13);
+            this.lblBrojTreningaNedeljno.Size = new System.Drawing.Size(313, 35);
             this.lblBrojTreningaNedeljno.TabIndex = 2;
             this.lblBrojTreningaNedeljno.Text = "Broj Treninga Nedeljno";
             // 
             // lblCena
             // 
             this.lblCena.AutoSize = true;
-            this.lblCena.Location = new System.Drawing.Point(404, 143);
+            this.lblCena.Font = new System.Drawing.Font("Bahnschrift", 21.75F);
+            this.lblCena.Location = new System.Drawing.Point(614, 194);
             this.lblCena.Name = "lblCena";
-            this.lblCena.Size = new System.Drawing.Size(32, 13);
+            this.lblCena.Size = new System.Drawing.Size(80, 35);
             this.lblCena.TabIndex = 3;
             this.lblCena.Text = "Cena";
             // 
             // lblOpis
             // 
             this.lblOpis.AutoSize = true;
-            this.lblOpis.Location = new System.Drawing.Point(112, 148);
+            this.lblOpis.Font = new System.Drawing.Font("Bahnschrift", 21.75F);
+            this.lblOpis.Location = new System.Drawing.Point(3, 189);
             this.lblOpis.Name = "lblOpis";
-            this.lblOpis.Size = new System.Drawing.Size(28, 13);
+            this.lblOpis.Size = new System.Drawing.Size(322, 35);
             this.lblOpis.TabIndex = 4;
-            this.lblOpis.Text = "Opis";
+            this.lblOpis.Text = "Opis programa treninga";
             // 
             // txtNazivProgramaTreninga
             // 
-            this.txtNazivProgramaTreninga.Location = new System.Drawing.Point(200, 104);
+            this.txtNazivProgramaTreninga.Font = new System.Drawing.Font("Bahnschrift", 16F);
+            this.txtNazivProgramaTreninga.Location = new System.Drawing.Point(346, 110);
             this.txtNazivProgramaTreninga.Name = "txtNazivProgramaTreninga";
-            this.txtNazivProgramaTreninga.Size = new System.Drawing.Size(100, 20);
+            this.txtNazivProgramaTreninga.Size = new System.Drawing.Size(261, 33);
             this.txtNazivProgramaTreninga.TabIndex = 5;
             // 
             // txtBrojTreningaNedeljno
             // 
-            this.txtBrojTreningaNedeljno.Location = new System.Drawing.Point(483, 104);
+            this.txtBrojTreningaNedeljno.Font = new System.Drawing.Font("Bahnschrift", 16F);
+            this.txtBrojTreningaNedeljno.Location = new System.Drawing.Point(932, 110);
             this.txtBrojTreningaNedeljno.Name = "txtBrojTreningaNedeljno";
-            this.txtBrojTreningaNedeljno.Size = new System.Drawing.Size(100, 20);
+            this.txtBrojTreningaNedeljno.Size = new System.Drawing.Size(204, 33);
             this.txtBrojTreningaNedeljno.TabIndex = 6;
             // 
             // txtOpis
             // 
-            this.txtOpis.Location = new System.Drawing.Point(200, 143);
+            this.txtOpis.Font = new System.Drawing.Font("Bahnschrift", 16F);
+            this.txtOpis.Location = new System.Drawing.Point(346, 194);
             this.txtOpis.Name = "txtOpis";
-            this.txtOpis.Size = new System.Drawing.Size(100, 20);
+            this.txtOpis.Size = new System.Drawing.Size(262, 33);
             this.txtOpis.TabIndex = 7;
             // 
             // txtCena
             // 
-            this.txtCena.Location = new System.Drawing.Point(483, 143);
+            this.txtCena.Font = new System.Drawing.Font("Bahnschrift", 16F);
+            this.txtCena.Location = new System.Drawing.Point(717, 196);
             this.txtCena.Name = "txtCena";
-            this.txtCena.Size = new System.Drawing.Size(100, 20);
+            this.txtCena.Size = new System.Drawing.Size(419, 33);
             this.txtCena.TabIndex = 8;
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.panel1);
             this.groupBox1.Controls.Add(this.lblGreskaBrisanje);
             this.groupBox1.Controls.Add(this.lblGreskaDanUNedelji);
             this.groupBox1.Controls.Add(this.lblGreskaTrajanje);
@@ -156,23 +168,51 @@ namespace Client.UserControls
             this.groupBox1.Controls.Add(this.lblTrajanje);
             this.groupBox1.Controls.Add(this.lblOpisTreninga);
             this.groupBox1.Controls.Add(this.lblNazivTreninga);
-            this.groupBox1.Controls.Add(this.dgvTreninzi);
-            this.groupBox1.Location = new System.Drawing.Point(64, 187);
+            this.groupBox1.Font = new System.Drawing.Font("Bahnschrift", 21.75F);
+            this.groupBox1.Location = new System.Drawing.Point(9, 251);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(650, 329);
+            this.groupBox1.Size = new System.Drawing.Size(1127, 478);
             this.groupBox1.TabIndex = 9;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Trening";
             // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.dgvTreninzi);
+            this.panel1.Font = new System.Drawing.Font("Bahnschrift", 12F);
+            this.panel1.Location = new System.Drawing.Point(22, 40);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(577, 407);
+            this.panel1.TabIndex = 16;
+            // 
+            // dgvTreninzi
+            // 
+            this.dgvTreninzi.AllowUserToAddRows = false;
+            this.dgvTreninzi.AllowUserToDeleteRows = false;
+            this.dgvTreninzi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvTreninzi.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
+            this.dgvTreninzi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvTreninzi.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvTreninzi.Location = new System.Drawing.Point(0, 0);
+            this.dgvTreninzi.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvTreninzi.Name = "dgvTreninzi";
+            this.dgvTreninzi.ReadOnly = true;
+            this.dgvTreninzi.RowTemplate.Height = 24;
+            this.dgvTreninzi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvTreninzi.Size = new System.Drawing.Size(577, 407);
+            this.dgvTreninzi.TabIndex = 0;
+            // 
             // lblGreskaBrisanje
             // 
             this.lblGreskaBrisanje.AutoSize = true;
-            this.lblGreskaBrisanje.Location = new System.Drawing.Point(16, 301);
+            this.lblGreskaBrisanje.Font = new System.Drawing.Font("Bahnschrift", 16F);
+            this.lblGreskaBrisanje.ForeColor = System.Drawing.Color.Red;
+            this.lblGreskaBrisanje.Location = new System.Drawing.Point(17, 449);
             this.lblGreskaBrisanje.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblGreskaBrisanje.Name = "lblGreskaBrisanje";
-            this.lblGreskaBrisanje.Size = new System.Drawing.Size(57, 13);
+            this.lblGreskaBrisanje.Size = new System.Drawing.Size(119, 27);
             this.lblGreskaBrisanje.TabIndex = 15;
             this.lblGreskaBrisanje.Text = "GreskaList";
             this.lblGreskaBrisanje.Visible = false;
@@ -180,176 +220,183 @@ namespace Client.UserControls
             // lblGreskaDanUNedelji
             // 
             this.lblGreskaDanUNedelji.AutoSize = true;
-            this.lblGreskaDanUNedelji.Location = new System.Drawing.Point(516, 254);
+            this.lblGreskaDanUNedelji.Font = new System.Drawing.Font("Bahnschrift", 12F);
+            this.lblGreskaDanUNedelji.ForeColor = System.Drawing.Color.Red;
+            this.lblGreskaDanUNedelji.Location = new System.Drawing.Point(815, 205);
             this.lblGreskaDanUNedelji.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblGreskaDanUNedelji.Name = "lblGreskaDanUNedelji";
-            this.lblGreskaDanUNedelji.Size = new System.Drawing.Size(35, 13);
+            this.lblGreskaDanUNedelji.Size = new System.Drawing.Size(54, 19);
             this.lblGreskaDanUNedelji.TabIndex = 14;
             this.lblGreskaDanUNedelji.Text = "label3";
             // 
             // lblGreskaTrajanje
             // 
             this.lblGreskaTrajanje.AutoSize = true;
-            this.lblGreskaTrajanje.Location = new System.Drawing.Point(516, 201);
+            this.lblGreskaTrajanje.Font = new System.Drawing.Font("Bahnschrift", 12F);
+            this.lblGreskaTrajanje.ForeColor = System.Drawing.Color.Red;
+            this.lblGreskaTrajanje.Location = new System.Drawing.Point(873, 145);
             this.lblGreskaTrajanje.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblGreskaTrajanje.Name = "lblGreskaTrajanje";
-            this.lblGreskaTrajanje.Size = new System.Drawing.Size(35, 13);
+            this.lblGreskaTrajanje.Size = new System.Drawing.Size(54, 19);
             this.lblGreskaTrajanje.TabIndex = 13;
             this.lblGreskaTrajanje.Text = "label2";
             // 
             // lblGreskaOpisTreninga
             // 
             this.lblGreskaOpisTreninga.AutoSize = true;
-            this.lblGreskaOpisTreninga.Location = new System.Drawing.Point(516, 160);
+            this.lblGreskaOpisTreninga.Font = new System.Drawing.Font("Bahnschrift", 12F);
+            this.lblGreskaOpisTreninga.ForeColor = System.Drawing.Color.Red;
+            this.lblGreskaOpisTreninga.Location = new System.Drawing.Point(805, 373);
             this.lblGreskaOpisTreninga.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblGreskaOpisTreninga.Name = "lblGreskaOpisTreninga";
-            this.lblGreskaOpisTreninga.Size = new System.Drawing.Size(35, 13);
+            this.lblGreskaOpisTreninga.Size = new System.Drawing.Size(51, 19);
             this.lblGreskaOpisTreninga.TabIndex = 12;
             this.lblGreskaOpisTreninga.Text = "label1";
             // 
             // lblGreskaNazivTreninga
             // 
             this.lblGreskaNazivTreninga.AutoSize = true;
-            this.lblGreskaNazivTreninga.Location = new System.Drawing.Point(516, 55);
+            this.lblGreskaNazivTreninga.Font = new System.Drawing.Font("Bahnschrift", 12F);
+            this.lblGreskaNazivTreninga.ForeColor = System.Drawing.Color.Red;
+            this.lblGreskaNazivTreninga.Location = new System.Drawing.Point(805, 85);
             this.lblGreskaNazivTreninga.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblGreskaNazivTreninga.Name = "lblGreskaNazivTreninga";
-            this.lblGreskaNazivTreninga.Size = new System.Drawing.Size(35, 13);
+            this.lblGreskaNazivTreninga.Size = new System.Drawing.Size(51, 19);
             this.lblGreskaNazivTreninga.TabIndex = 11;
             this.lblGreskaNazivTreninga.Text = "label1";
             // 
             // btnDodajTrening
             // 
-            this.btnDodajTrening.Location = new System.Drawing.Point(541, 289);
+            this.btnDodajTrening.Font = new System.Drawing.Font("Bahnschrift", 16F);
+            this.btnDodajTrening.Location = new System.Drawing.Point(946, 395);
             this.btnDodajTrening.Margin = new System.Windows.Forms.Padding(2);
             this.btnDodajTrening.Name = "btnDodajTrening";
-            this.btnDodajTrening.Size = new System.Drawing.Size(98, 36);
+            this.btnDodajTrening.Size = new System.Drawing.Size(157, 52);
             this.btnDodajTrening.TabIndex = 10;
             this.btnDodajTrening.Text = "Dodaj Trening";
             this.btnDodajTrening.UseVisualStyleBackColor = true;
             // 
             // btnObrisiTrening
             // 
-            this.btnObrisiTrening.Location = new System.Drawing.Point(419, 289);
+            this.btnObrisiTrening.Font = new System.Drawing.Font("Bahnschrift", 16F);
+            this.btnObrisiTrening.Location = new System.Drawing.Point(620, 395);
             this.btnObrisiTrening.Margin = new System.Windows.Forms.Padding(2);
             this.btnObrisiTrening.Name = "btnObrisiTrening";
-            this.btnObrisiTrening.Size = new System.Drawing.Size(98, 36);
+            this.btnObrisiTrening.Size = new System.Drawing.Size(157, 52);
             this.btnObrisiTrening.TabIndex = 9;
             this.btnObrisiTrening.Text = "Obrisi trening";
             this.btnObrisiTrening.UseVisualStyleBackColor = true;
             // 
             // cbDanUNedelji
             // 
+            this.cbDanUNedelji.Font = new System.Drawing.Font("Bahnschrift", 16F);
             this.cbDanUNedelji.FormattingEnabled = true;
-            this.cbDanUNedelji.Location = new System.Drawing.Point(519, 231);
+            this.cbDanUNedelji.Location = new System.Drawing.Point(809, 170);
             this.cbDanUNedelji.Margin = new System.Windows.Forms.Padding(2);
             this.cbDanUNedelji.Name = "cbDanUNedelji";
-            this.cbDanUNedelji.Size = new System.Drawing.Size(120, 21);
+            this.cbDanUNedelji.Size = new System.Drawing.Size(294, 33);
             this.cbDanUNedelji.TabIndex = 8;
             // 
             // txtOpisTreninga
             // 
-            this.txtOpisTreninga.Location = new System.Drawing.Point(519, 92);
+            this.txtOpisTreninga.Font = new System.Drawing.Font("Bahnschrift", 16F);
+            this.txtOpisTreninga.Location = new System.Drawing.Point(809, 233);
             this.txtOpisTreninga.Margin = new System.Windows.Forms.Padding(2);
             this.txtOpisTreninga.Multiline = true;
             this.txtOpisTreninga.Name = "txtOpisTreninga";
-            this.txtOpisTreninga.Size = new System.Drawing.Size(120, 66);
+            this.txtOpisTreninga.Size = new System.Drawing.Size(294, 138);
             this.txtOpisTreninga.TabIndex = 7;
             // 
             // txtTrajanjeUMinutima
             // 
-            this.txtTrajanjeUMinutima.Location = new System.Drawing.Point(519, 179);
+            this.txtTrajanjeUMinutima.Font = new System.Drawing.Font("Bahnschrift", 16F);
+            this.txtTrajanjeUMinutima.Location = new System.Drawing.Point(873, 110);
             this.txtTrajanjeUMinutima.Margin = new System.Windows.Forms.Padding(2);
             this.txtTrajanjeUMinutima.Name = "txtTrajanjeUMinutima";
-            this.txtTrajanjeUMinutima.Size = new System.Drawing.Size(120, 20);
+            this.txtTrajanjeUMinutima.Size = new System.Drawing.Size(230, 33);
             this.txtTrajanjeUMinutima.TabIndex = 6;
             // 
             // txtNazivTreninga
             // 
-            this.txtNazivTreninga.Location = new System.Drawing.Point(519, 33);
+            this.txtNazivTreninga.Font = new System.Drawing.Font("Bahnschrift", 16F);
+            this.txtNazivTreninga.Location = new System.Drawing.Point(809, 50);
             this.txtNazivTreninga.Margin = new System.Windows.Forms.Padding(2);
             this.txtNazivTreninga.Name = "txtNazivTreninga";
-            this.txtNazivTreninga.Size = new System.Drawing.Size(120, 20);
+            this.txtNazivTreninga.Size = new System.Drawing.Size(294, 33);
             this.txtNazivTreninga.TabIndex = 5;
             // 
             // lblDanUNedelji
             // 
             this.lblDanUNedelji.AutoSize = true;
-            this.lblDanUNedelji.Location = new System.Drawing.Point(427, 231);
+            this.lblDanUNedelji.Location = new System.Drawing.Point(614, 165);
             this.lblDanUNedelji.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblDanUNedelji.Name = "lblDanUNedelji";
-            this.lblDanUNedelji.Size = new System.Drawing.Size(73, 13);
+            this.lblDanUNedelji.Size = new System.Drawing.Size(191, 35);
             this.lblDanUNedelji.TabIndex = 4;
             this.lblDanUNedelji.Text = "Dan U Nedelji";
             // 
             // lblTrajanje
             // 
             this.lblTrajanje.AutoSize = true;
-            this.lblTrajanje.Location = new System.Drawing.Point(420, 179);
+            this.lblTrajanje.Location = new System.Drawing.Point(614, 110);
             this.lblTrajanje.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTrajanje.Name = "lblTrajanje";
-            this.lblTrajanje.Size = new System.Drawing.Size(95, 13);
+            this.lblTrajanje.Size = new System.Drawing.Size(255, 35);
             this.lblTrajanje.TabIndex = 3;
             this.lblTrajanje.Text = "TrajanjeUMinutima";
             // 
             // lblOpisTreninga
             // 
             this.lblOpisTreninga.AutoSize = true;
-            this.lblOpisTreninga.Location = new System.Drawing.Point(424, 92);
+            this.lblOpisTreninga.Location = new System.Drawing.Point(614, 228);
             this.lblOpisTreninga.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblOpisTreninga.Name = "lblOpisTreninga";
-            this.lblOpisTreninga.Size = new System.Drawing.Size(69, 13);
+            this.lblOpisTreninga.Size = new System.Drawing.Size(187, 35);
             this.lblOpisTreninga.TabIndex = 2;
             this.lblOpisTreninga.Text = "Opis treninga";
             // 
             // lblNazivTreninga
             // 
             this.lblNazivTreninga.AutoSize = true;
-            this.lblNazivTreninga.Location = new System.Drawing.Point(424, 40);
+            this.lblNazivTreninga.Location = new System.Drawing.Point(614, 45);
             this.lblNazivTreninga.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNazivTreninga.Name = "lblNazivTreninga";
-            this.lblNazivTreninga.Size = new System.Drawing.Size(76, 13);
+            this.lblNazivTreninga.Size = new System.Drawing.Size(196, 35);
             this.lblNazivTreninga.TabIndex = 1;
             this.lblNazivTreninga.Text = "NazivTreninga";
             // 
-            // dgvTreninzi
-            // 
-            this.dgvTreninzi.AllowUserToAddRows = false;
-            this.dgvTreninzi.AllowUserToDeleteRows = false;
-            this.dgvTreninzi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTreninzi.Location = new System.Drawing.Point(19, 17);
-            this.dgvTreninzi.Margin = new System.Windows.Forms.Padding(2);
-            this.dgvTreninzi.Name = "dgvTreninzi";
-            this.dgvTreninzi.ReadOnly = true;
-            this.dgvTreninzi.RowTemplate.Height = 24;
-            this.dgvTreninzi.Size = new System.Drawing.Size(389, 277);
-            this.dgvTreninzi.TabIndex = 0;
-            // 
             // btnSacuvaj
             // 
-            this.btnSacuvaj.Location = new System.Drawing.Point(605, 521);
+            this.btnSacuvaj.BackColor = System.Drawing.Color.DarkRed;
+            this.btnSacuvaj.Font = new System.Drawing.Font("Bahnschrift", 21.75F);
+            this.btnSacuvaj.Location = new System.Drawing.Point(766, 733);
             this.btnSacuvaj.Margin = new System.Windows.Forms.Padding(2);
             this.btnSacuvaj.Name = "btnSacuvaj";
-            this.btnSacuvaj.Size = new System.Drawing.Size(109, 45);
+            this.btnSacuvaj.Size = new System.Drawing.Size(370, 72);
             this.btnSacuvaj.TabIndex = 10;
-            this.btnSacuvaj.Text = "Sacuvaj";
-            this.btnSacuvaj.UseVisualStyleBackColor = true;
+            this.btnSacuvaj.Text = "Sacuvaj program treninga";
+            this.btnSacuvaj.UseVisualStyleBackColor = false;
             // 
             // btnObrisi
             // 
-            this.btnObrisi.Location = new System.Drawing.Point(64, 521);
+            this.btnObrisi.BackColor = System.Drawing.Color.DarkRed;
+            this.btnObrisi.Font = new System.Drawing.Font("Bahnschrift", 19.75F);
+            this.btnObrisi.Location = new System.Drawing.Point(9, 734);
             this.btnObrisi.Margin = new System.Windows.Forms.Padding(2);
             this.btnObrisi.Name = "btnObrisi";
-            this.btnObrisi.Size = new System.Drawing.Size(109, 45);
+            this.btnObrisi.Size = new System.Drawing.Size(370, 72);
             this.btnObrisi.TabIndex = 11;
             this.btnObrisi.Text = "Obrisi program treninga";
-            this.btnObrisi.UseVisualStyleBackColor = true;
+            this.btnObrisi.UseVisualStyleBackColor = false;
             // 
             // lblGreskaNazivProgramaTreninga
             // 
             this.lblGreskaNazivProgramaTreninga.AutoSize = true;
-            this.lblGreskaNazivProgramaTreninga.Location = new System.Drawing.Point(197, 127);
+            this.lblGreskaNazivProgramaTreninga.Font = new System.Drawing.Font("Bahnschrift", 12F);
+            this.lblGreskaNazivProgramaTreninga.ForeColor = System.Drawing.Color.Red;
+            this.lblGreskaNazivProgramaTreninga.Location = new System.Drawing.Point(342, 146);
             this.lblGreskaNazivProgramaTreninga.Name = "lblGreskaNazivProgramaTreninga";
-            this.lblGreskaNazivProgramaTreninga.Size = new System.Drawing.Size(35, 13);
+            this.lblGreskaNazivProgramaTreninga.Size = new System.Drawing.Size(51, 19);
             this.lblGreskaNazivProgramaTreninga.TabIndex = 12;
             this.lblGreskaNazivProgramaTreninga.Text = "label1";
             this.lblGreskaNazivProgramaTreninga.Visible = false;
@@ -357,9 +404,11 @@ namespace Client.UserControls
             // lblGreskaOpisProgramaTreninga
             // 
             this.lblGreskaOpisProgramaTreninga.AutoSize = true;
-            this.lblGreskaOpisProgramaTreninga.Location = new System.Drawing.Point(197, 166);
+            this.lblGreskaOpisProgramaTreninga.Font = new System.Drawing.Font("Bahnschrift", 12F);
+            this.lblGreskaOpisProgramaTreninga.ForeColor = System.Drawing.Color.Red;
+            this.lblGreskaOpisProgramaTreninga.Location = new System.Drawing.Point(342, 230);
             this.lblGreskaOpisProgramaTreninga.Name = "lblGreskaOpisProgramaTreninga";
-            this.lblGreskaOpisProgramaTreninga.Size = new System.Drawing.Size(35, 13);
+            this.lblGreskaOpisProgramaTreninga.Size = new System.Drawing.Size(51, 19);
             this.lblGreskaOpisProgramaTreninga.TabIndex = 13;
             this.lblGreskaOpisProgramaTreninga.Text = "label1";
             this.lblGreskaOpisProgramaTreninga.Visible = false;
@@ -367,9 +416,11 @@ namespace Client.UserControls
             // lblGreskaBrojTreningaNedeljno
             // 
             this.lblGreskaBrojTreningaNedeljno.AutoSize = true;
-            this.lblGreskaBrojTreningaNedeljno.Location = new System.Drawing.Point(480, 127);
+            this.lblGreskaBrojTreningaNedeljno.Font = new System.Drawing.Font("Bahnschrift", 12F);
+            this.lblGreskaBrojTreningaNedeljno.ForeColor = System.Drawing.Color.Red;
+            this.lblGreskaBrojTreningaNedeljno.Location = new System.Drawing.Point(928, 146);
             this.lblGreskaBrojTreningaNedeljno.Name = "lblGreskaBrojTreningaNedeljno";
-            this.lblGreskaBrojTreningaNedeljno.Size = new System.Drawing.Size(35, 13);
+            this.lblGreskaBrojTreningaNedeljno.Size = new System.Drawing.Size(51, 19);
             this.lblGreskaBrojTreningaNedeljno.TabIndex = 14;
             this.lblGreskaBrojTreningaNedeljno.Text = "label1";
             this.lblGreskaBrojTreningaNedeljno.Visible = false;
@@ -377,9 +428,11 @@ namespace Client.UserControls
             // lblGreskaCena
             // 
             this.lblGreskaCena.AutoSize = true;
-            this.lblGreskaCena.Location = new System.Drawing.Point(480, 166);
+            this.lblGreskaCena.Font = new System.Drawing.Font("Bahnschrift", 12F);
+            this.lblGreskaCena.ForeColor = System.Drawing.Color.Red;
+            this.lblGreskaCena.Location = new System.Drawing.Point(714, 232);
             this.lblGreskaCena.Name = "lblGreskaCena";
-            this.lblGreskaCena.Size = new System.Drawing.Size(35, 13);
+            this.lblGreskaCena.Size = new System.Drawing.Size(51, 19);
             this.lblGreskaCena.TabIndex = 15;
             this.lblGreskaCena.Text = "label1";
             this.lblGreskaCena.Visible = false;
@@ -388,6 +441,7 @@ namespace Client.UserControls
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(108)))), ((int)(((byte)(106)))));
             this.Controls.Add(this.lblGreskaCena);
             this.Controls.Add(this.lblGreskaBrojTreningaNedeljno);
             this.Controls.Add(this.lblGreskaOpisProgramaTreninga);
@@ -405,9 +459,10 @@ namespace Client.UserControls
             this.Controls.Add(this.lblNazivProgramaTreninga);
             this.Controls.Add(this.lblTitle);
             this.Name = "UcKreirajProgramTreninga";
-            this.Size = new System.Drawing.Size(733, 677);
+            this.Size = new System.Drawing.Size(1163, 884);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTreninzi)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -448,6 +503,7 @@ namespace Client.UserControls
         private Label lblGreskaOpisProgramaTreninga;
         private Label lblGreskaBrojTreningaNedeljno;
         private Label lblGreskaCena;
+        private Panel panel1;
 
         public Label LblTitle { get => lblTitle; set => lblTitle = value; }
         public Label LblNazivProgramaTreninga { get => lblNazivProgramaTreninga; set => lblNazivProgramaTreninga = value; }

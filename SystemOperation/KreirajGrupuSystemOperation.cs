@@ -15,7 +15,7 @@ namespace SystemOperation
             {
                 p.Grupa = Grupa;
 
-                repository.Add(p);
+                repository.Update(p, $"prijavazaprogram.programtreningaid={p.ProgramTreninga.ProgramTreningaId} and prijavazaprogram.korisnikid={p.Korisnik.KorisnikId} ");
             }
         }
     }

@@ -42,130 +42,150 @@ namespace Client.UserControls
             this.dgvTreninzi = new System.Windows.Forms.DataGridView();
             this.lblListaTreninga = new System.Windows.Forms.Label();
             this.btnPrijaviSe = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgvTreninzi)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Location = new System.Drawing.Point(303, 64);
-            this.lblTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTitle.Font = new System.Drawing.Font("Bahnschrift Condensed", 36F);
+            this.lblTitle.Location = new System.Drawing.Point(371, 37);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(175, 16);
+            this.lblTitle.Size = new System.Drawing.Size(462, 58);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "Pregled Programa Treninga";
             // 
             // lblNaziv
             // 
             this.lblNaziv.AutoSize = true;
-            this.lblNaziv.Location = new System.Drawing.Point(67, 158);
-            this.lblNaziv.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblNaziv.Font = new System.Drawing.Font("Bahnschrift", 21.75F);
+            this.lblNaziv.Location = new System.Drawing.Point(163, 150);
             this.lblNaziv.Name = "lblNaziv";
-            this.lblNaziv.Size = new System.Drawing.Size(161, 16);
+            this.lblNaziv.Size = new System.Drawing.Size(341, 35);
             this.lblNaziv.TabIndex = 1;
             this.lblNaziv.Text = "Naziv Programa Treninga";
             // 
             // txtNaziv
             // 
-            this.txtNaziv.Location = new System.Drawing.Point(293, 158);
-            this.txtNaziv.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNaziv.Font = new System.Drawing.Font("Bahnschrift", 16F);
+            this.txtNaziv.Location = new System.Drawing.Point(510, 150);
             this.txtNaziv.Name = "txtNaziv";
-            this.txtNaziv.Size = new System.Drawing.Size(249, 22);
+            this.txtNaziv.Size = new System.Drawing.Size(506, 33);
             this.txtNaziv.TabIndex = 2;
             // 
             // txtBrojTreninga
             // 
-            this.txtBrojTreninga.Location = new System.Drawing.Point(293, 217);
-            this.txtBrojTreninga.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtBrojTreninga.Font = new System.Drawing.Font("Bahnschrift", 16F);
+            this.txtBrojTreninga.Location = new System.Drawing.Point(510, 231);
             this.txtBrojTreninga.Name = "txtBrojTreninga";
-            this.txtBrojTreninga.Size = new System.Drawing.Size(133, 22);
+            this.txtBrojTreninga.Size = new System.Drawing.Size(506, 33);
             this.txtBrojTreninga.TabIndex = 4;
             // 
             // lblBrojTreninga
             // 
             this.lblBrojTreninga.AutoSize = true;
-            this.lblBrojTreninga.Location = new System.Drawing.Point(67, 220);
-            this.lblBrojTreninga.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblBrojTreninga.Font = new System.Drawing.Font("Bahnschrift", 21.75F);
+            this.lblBrojTreninga.Location = new System.Drawing.Point(163, 226);
             this.lblBrojTreninga.Name = "lblBrojTreninga";
-            this.lblBrojTreninga.Size = new System.Drawing.Size(146, 16);
+            this.lblBrojTreninga.Size = new System.Drawing.Size(313, 35);
             this.lblBrojTreninga.TabIndex = 3;
             this.lblBrojTreninga.Text = "Broj Treninga Nedeljno";
             // 
             // txtCena
             // 
-            this.txtCena.Location = new System.Drawing.Point(293, 274);
-            this.txtCena.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCena.Font = new System.Drawing.Font("Bahnschrift", 16F);
+            this.txtCena.Location = new System.Drawing.Point(510, 305);
             this.txtCena.Name = "txtCena";
-            this.txtCena.Size = new System.Drawing.Size(133, 22);
+            this.txtCena.Size = new System.Drawing.Size(506, 33);
             this.txtCena.TabIndex = 6;
             // 
             // lblCena
             // 
             this.lblCena.AutoSize = true;
-            this.lblCena.Location = new System.Drawing.Point(67, 278);
-            this.lblCena.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCena.Font = new System.Drawing.Font("Bahnschrift", 21.75F);
+            this.lblCena.Location = new System.Drawing.Point(163, 300);
             this.lblCena.Name = "lblCena";
-            this.lblCena.Size = new System.Drawing.Size(39, 16);
+            this.lblCena.Size = new System.Drawing.Size(80, 35);
             this.lblCena.TabIndex = 5;
             this.lblCena.Text = "Cena";
             // 
             // lblOpis
             // 
             this.lblOpis.AutoSize = true;
-            this.lblOpis.Location = new System.Drawing.Point(67, 327);
-            this.lblOpis.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblOpis.Font = new System.Drawing.Font("Bahnschrift", 21.75F);
+            this.lblOpis.Location = new System.Drawing.Point(163, 370);
             this.lblOpis.Name = "lblOpis";
-            this.lblOpis.Size = new System.Drawing.Size(154, 16);
+            this.lblOpis.Size = new System.Drawing.Size(326, 35);
             this.lblOpis.TabIndex = 7;
             this.lblOpis.Text = "Opis programa Treninga";
             // 
             // txtOpisProgramaTreninga
             // 
-            this.txtOpisProgramaTreninga.Location = new System.Drawing.Point(293, 327);
-            this.txtOpisProgramaTreninga.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtOpisProgramaTreninga.Font = new System.Drawing.Font("Bahnschrift", 16F);
+            this.txtOpisProgramaTreninga.Location = new System.Drawing.Point(510, 375);
+            this.txtOpisProgramaTreninga.Multiline = true;
             this.txtOpisProgramaTreninga.Name = "txtOpisProgramaTreninga";
-            this.txtOpisProgramaTreninga.Size = new System.Drawing.Size(249, 22);
+            this.txtOpisProgramaTreninga.Size = new System.Drawing.Size(506, 96);
             this.txtOpisProgramaTreninga.TabIndex = 8;
             // 
             // dgvTreninzi
             // 
             this.dgvTreninzi.AllowUserToAddRows = false;
             this.dgvTreninzi.AllowUserToDeleteRows = false;
+            this.dgvTreninzi.AllowUserToOrderColumns = true;
+            this.dgvTreninzi.AllowUserToResizeColumns = false;
+            this.dgvTreninzi.AllowUserToResizeRows = false;
+            this.dgvTreninzi.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvTreninzi.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dgvTreninzi.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvTreninzi.Location = new System.Drawing.Point(71, 426);
-            this.dgvTreninzi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvTreninzi.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvTreninzi.Location = new System.Drawing.Point(0, 0);
             this.dgvTreninzi.Name = "dgvTreninzi";
             this.dgvTreninzi.ReadOnly = true;
-            this.dgvTreninzi.Size = new System.Drawing.Size(837, 284);
+            this.dgvTreninzi.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvTreninzi.Size = new System.Drawing.Size(847, 224);
             this.dgvTreninzi.TabIndex = 11;
             // 
             // lblListaTreninga
             // 
             this.lblListaTreninga.AutoSize = true;
-            this.lblListaTreninga.Location = new System.Drawing.Point(73, 391);
-            this.lblListaTreninga.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblListaTreninga.Font = new System.Drawing.Font("Bahnschrift", 21.75F);
+            this.lblListaTreninga.Location = new System.Drawing.Point(163, 436);
             this.lblListaTreninga.Name = "lblListaTreninga";
-            this.lblListaTreninga.Size = new System.Drawing.Size(92, 16);
+            this.lblListaTreninga.Size = new System.Drawing.Size(197, 35);
             this.lblListaTreninga.TabIndex = 12;
             this.lblListaTreninga.Text = "Lista Treninga";
             // 
             // btnPrijaviSe
             // 
-            this.btnPrijaviSe.Location = new System.Drawing.Point(633, 361);
-            this.btnPrijaviSe.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnPrijaviSe.BackColor = System.Drawing.Color.DarkRed;
+            this.btnPrijaviSe.Font = new System.Drawing.Font("Bahnschrift", 16F);
+            this.btnPrijaviSe.Location = new System.Drawing.Point(467, 735);
             this.btnPrijaviSe.Name = "btnPrijaviSe";
-            this.btnPrijaviSe.Size = new System.Drawing.Size(275, 47);
+            this.btnPrijaviSe.Size = new System.Drawing.Size(259, 68);
             this.btnPrijaviSe.TabIndex = 17;
             this.btnPrijaviSe.Text = "Prijavi se na program treninga";
-            this.btnPrijaviSe.UseVisualStyleBackColor = true;
+            this.btnPrijaviSe.UseVisualStyleBackColor = false;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.dgvTreninzi);
+            this.panel1.Font = new System.Drawing.Font("Bahnschrift", 18F);
+            this.panel1.Location = new System.Drawing.Point(169, 477);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(847, 224);
+            this.panel1.TabIndex = 18;
             // 
             // UcSingleProgramTreninga
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(108)))), ((int)(((byte)(106)))));
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnPrijaviSe);
             this.Controls.Add(this.lblListaTreninga);
-            this.Controls.Add(this.dgvTreninzi);
             this.Controls.Add(this.txtOpisProgramaTreninga);
             this.Controls.Add(this.lblOpis);
             this.Controls.Add(this.txtCena);
@@ -175,10 +195,10 @@ namespace Client.UserControls
             this.Controls.Add(this.txtNaziv);
             this.Controls.Add(this.lblNaziv);
             this.Controls.Add(this.lblTitle);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "UcSingleProgramTreninga";
-            this.Size = new System.Drawing.Size(957, 1147);
+            this.Size = new System.Drawing.Size(1163, 884);
             ((System.ComponentModel.ISupportInitialize)(this.dgvTreninzi)).EndInit();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -198,6 +218,7 @@ namespace Client.UserControls
         private System.Windows.Forms.DataGridView dgvTreninzi;
         private System.Windows.Forms.Label lblListaTreninga;
         private Button btnPrijaviSe;
+        private Panel panel1;
 
         public Label LblTitle { get => lblTitle; set => lblTitle = value; }
         public Label LblNaziv { get => lblNaziv; set => lblNaziv = value; }

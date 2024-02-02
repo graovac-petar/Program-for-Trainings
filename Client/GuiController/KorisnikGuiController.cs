@@ -128,6 +128,12 @@ namespace Client.GuiController
                     frmRegistracija.LblGreskaKontakt.Visible = true;
                     throw new UserException("userex >> kontakt telefon karakteri");
                 }
+                if (frmRegistracija.TxtKontakt.Text.Length < 11)
+                {
+                    frmRegistracija.LblGreskaKontakt.Text = "Kontakt mora da sadrzi vise od 10 brojeva";
+                    frmRegistracija.LblGreskaKontakt.Visible = true;
+                    throw new UserException("userex >> kontakt telefon karakteri");
+                }
 
 
                 Korisnik k = PreuzmiPodatkeZaRegistraciju();

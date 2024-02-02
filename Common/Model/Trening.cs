@@ -52,14 +52,18 @@ namespace Common.Model
             List<IEntity> treninzi = new List<IEntity>();
             while (reader.Read())
             {
-                ProgramTreninga pt = new ProgramTreninga()
-                {
-                    ProgramTreningaId = reader.GetInt32(6),
-                    NazivProgramaTreninga = reader.GetString(7),
-                    BrojTreningaNedeljno = reader.GetInt32(8),
-                    Cena = reader.GetDouble(9),
-                    Opis = reader.GetString(10)
-                };
+                ProgramTreninga pt = new ProgramTreninga();
+
+                pt.ProgramTreningaId = reader.GetInt32(6);
+                pt.NazivProgramaTreninga = reader.GetString(7);
+                pt.BrojTreningaNedeljno = reader.GetInt32(8);
+                pt.Cena = reader.GetDouble(9);
+                if (!reader.IsDBNull(10))
+                    pt.Opis = reader.GetString(10);
+                else
+                    pt.Opis = "";
+
+
                 Trening t = new Trening()
                 {
                     TreningId = reader.GetInt32(0),

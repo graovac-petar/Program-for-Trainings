@@ -10,7 +10,7 @@ namespace SystemOperation
             repository.Add(programTreninga);
             foreach (Trening t in programTreninga.TreninziZaDodavanje)
             {
-                t.ProgramTreningaId = programTreninga.ProgramTreningaId;
+                t.ProgramTreninga = programTreninga;
                 repository.Add(t);
             }
         }

@@ -381,7 +381,7 @@ namespace Client.Communication
                 Request req = new Request()
                 {
                     Body = pt,
-                    Operation = Operation.ObrisiProgramTreninga
+                    Operation = Operation.KreirajProgramTreninga
                 };
                 sender.Send(req);
 
@@ -748,7 +748,31 @@ namespace Client.Communication
 
         internal void IzmeniGrupu(Grupa g)
         {
-            throw new NotImplementedException();
+            try
+            {
+                if (!SocketConnected()) throw new IOException("Niste konektovani na server");
+
+                Request req = new Request()
+                {
+                    Body = g,
+                    Operation = Operation.IzmeniGrupu
+                };
+                sender.Send(req);
+
+                Response res = receiver.Receive<Response>();
+
+                if (!res.Success) throw new Exception(res.Message);
+                if (res.Success) System.Windows.Forms.MessageBox.Show(res.Message);
+            }
+            catch (IOException ex)
+            {
+                DisconnectedCloseApp();
+                throw ex;
+            }
+            catch (System.Exception ex)
+            {
+                throw ex;
+            }
         }
 
         internal void KreirajGrupu(Grupa g)

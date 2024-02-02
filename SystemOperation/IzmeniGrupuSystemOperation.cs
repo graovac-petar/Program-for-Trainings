@@ -7,14 +7,15 @@ namespace SystemOperation
         public Grupa Grupa;
         protected override void ExecuteConcreteOperation()
         {
-            repository.Update(Grupa, $" idgrupe='{Grupa.GrupaId}'");
+            repository.Update(Grupa, $" grupaid={Grupa.GrupaId}");
 
             if (Grupa.zaBrisanje.Count > 0)
             {
 
                 foreach (Prijava p in Grupa.zaBrisanje)
                 {
-                    repository.Update(p, $"prijavazaprogram.grupaid=NULL");
+                    p.Grupa = null;
+                    repository.Update(p, $"prijavazaprogram.programtreningaid={p.ProgramTreninga.ProgramTreningaId} and prijavazaprogram.korisnikid={p.Korisnik.KorisnikId}");
                 }
 
             }
@@ -23,7 +24,7 @@ namespace SystemOperation
                 foreach (Prijava p in Grupa.zaDodavanje)
                 {
                     p.Grupa = Grupa;
-                    repository.Update(p, $"prijavazaprogram.grupaid={Grupa.GrupaId}");
+                    repository.Update(p, $"prijavazaprogram.programtreningaid={p.ProgramTreninga.ProgramTreningaId} and prijavazaprogram.korisnikid={p.Korisnik.KorisnikId} ");
                 }
             }
         }

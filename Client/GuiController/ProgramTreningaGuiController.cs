@@ -169,6 +169,7 @@ namespace Client.GuiController
             if (pt == null)
             {
                 ucKreirajProgramTreninga.BtnObrisi.Visible = false;
+                ucKreirajProgramTreninga.LblTitle.Text = "Kreiraj program treninga";
             }
 
             if (pt != null)
@@ -178,9 +179,15 @@ namespace Client.GuiController
                 ucKreirajProgramTreninga.TxtBrojTreningaNedeljno.Text = pt.BrojTreningaNedeljno.ToString();
                 ucKreirajProgramTreninga.TxtOpis.Text = pt.Opis;
                 ucKreirajProgramTreninga.TxtCena.Text = pt.Cena.ToString();
+                ucKreirajProgramTreninga.LblTitle.Text = "Izmeni program treninga";
             }
             treninzi = new BindingList<Trening>(ClientCommunication.Instance.VratiSveTreningeZaProgramTreninga(pt));
             ucKreirajProgramTreninga.DgvTreninzi.DataSource = treninzi;
+            ucKreirajProgramTreninga.DgvTreninzi.Columns["NaziTreninga"].HeaderText = "Naziv Treninga";
+            ucKreirajProgramTreninga.DgvTreninzi.Columns["OpisTreninga"].HeaderText = "Opis Treninga";
+            ucKreirajProgramTreninga.DgvTreninzi.Columns["TrajanjeUMinutima"].HeaderText = "Trajanje u minutima";
+            ucKreirajProgramTreninga.DgvTreninzi.Columns["DanUNedelji"].HeaderText = "Dan u nedelji";
+
 
             ucKreirajProgramTreninga.BtnDodajTrening.Click += (s, e) => DodajTrening();
             ucKreirajProgramTreninga.BtnObrisiTrening.Click += (s, e) => ObrisiTrening();
@@ -255,7 +262,7 @@ namespace Client.GuiController
                     ucKreirajProgramTreninga.LblGreskaCena.Visible = true;
                     throw new UserException("userex >> cena broj");
                 }
-                if ((ucKreirajProgramTreninga.TxtBrojTreningaNedeljno.Text.Count(x => x == ',') > 1) || ucKreirajProgramTreninga.TxtBrojTreningaNedeljno.Text.StartsWith(",") || ucKreirajProgramTreninga.TxtBrojTreningaNedeljno.Text.EndsWith(","))
+                if ((ucKreirajProgramTreninga.TxtBrojTreningaNedeljno.Text.Count(x => x == ',') > 1))
                 {
                     ucKreirajProgramTreninga.LblGreskaCena.Text = "Nepravilan unos";
                     ucKreirajProgramTreninga.LblGreskaCena.Visible = true;
@@ -400,6 +407,7 @@ namespace Client.GuiController
                 treninzi.Add(trening);
                 treninziZaDodavanje.Add(trening);
                 ucKreirajProgramTreninga.DgvTreninzi.DataSource = treninzi;
+
                 ObrisiPodatkeZaTrening();
             }
             catch (UserException)

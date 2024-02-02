@@ -79,6 +79,11 @@
     <Compile Include="GuiController\ProgramTreningaGuiController.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\UcKreirajGrupu.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -96,12 +101,6 @@
     </Compile>
     <Compile Include="UserControls\UcMojiProgramiTreninga.Designer.cs">
       <DependentUpon>UcMojiProgramiTreninga.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControls\UcPretragaGrupa.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\UcPretragaGrupa.Designer.cs">
-      <DependentUpon>UcPretragaGrupa.cs</DependentUpon>
     </Compile>
     <Compile Include="UserControls\UcPretragaProgramaTreninga.cs">
       <SubType>UserControl</SubType>
@@ -121,12 +120,6 @@
     <Compile Include="UserControls\UcSingleProgramTreninga.Designer.cs">
       <DependentUpon>UcSingleProgramTreninga.cs</DependentUpon>
     </Compile>
-    <Compile Include="UserControls\UcSingleTrening.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="UserControls\UcSingleTrening.Designer.cs">
-      <DependentUpon>UcSingleTrening.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Forms\FrmAdministrator.resx">
       <DependentUpon>FrmAdministrator.cs</DependentUpon>
     </EmbeddedResource>
@@ -141,13 +134,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="UserControls\UcKreirajGrupu.resx">
       <DependentUpon>UcKreirajGrupu.cs</DependentUpon>
     </EmbeddedResource>
@@ -157,9 +146,6 @@
     <EmbeddedResource Include="UserControls\UcMojiProgramiTreninga.resx">
       <DependentUpon>UcMojiProgramiTreninga.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UcPretragaGrupa.resx">
-      <DependentUpon>UcPretragaGrupa.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UcPretragaProgramaTreninga.resx">
       <DependentUpon>UcPretragaProgramaTreninga.cs</DependentUpon>
     </EmbeddedResource>
@@ -168,9 +154,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserControls\UcSingleProgramTreninga.resx">
       <DependentUpon>UcSingleProgramTreninga.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserControls\UcSingleTrening.resx">
-      <DependentUpon>UcSingleTrening.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -192,7 +175,9 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Resources\" />
+    <None Include="Resources\mot.jpg" />
+    <None Include="Resources\everything-you-need-know-about-fitness-1440x810.jpg" />
+    <Content Include="Resources\GymPrijava1.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

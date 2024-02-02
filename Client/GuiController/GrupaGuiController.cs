@@ -11,16 +11,39 @@ namespace Client.GuiController
 {
     public class GrupaGuiController
     {
-        private UcPretragaGrupa ucPretragaGrupa;
+        private UcPretragaProgramaTreninga ucPretragaGrupa;
         #region Vise Grupa
         internal Control KreirajUcPrikazGrupaAdministrator()
         {
-            ucPretragaGrupa = new UcPretragaGrupa();
+            try
+            {
+                ucPretragaGrupa = new UcPretragaProgramaTreninga();
 
-            ucPretragaGrupa.DgvListaGrupa.DataSource = new BindingList<Grupa>(ClientCommunication.Instance.VratiSveGrupe());
-            ucPretragaGrupa.TxtPretraga.TextChanged += TxtFilterPretrazi;
-            ucPretragaGrupa.BtnIzaberi.Click += IzaberiProgramTreningaZaIzmenu;
-            return ucPretragaGrupa;
+                ucPretragaGrupa.DgvListaProgramaTreninga.DataSource = new BindingList<Grupa>(ClientCommunication.Instance.VratiSveGrupe());
+                ucPretragaGrupa.TxtPretraga.TextChanged += TxtFilterPretrazi;
+                ucPretragaGrupa.BtnIzaberi.Click += IzaberiProgramTreningaZaIzmenu;
+                //razlika od programa treninga
+                ucPretragaGrupa.LblProgramTreninga.Text = "Grupe";
+                ucPretragaGrupa.LblIme.Text = "Ime grupe :";
+                ucPretragaGrupa.BtnIzaberi.Text = "Izaberi grupu";
+                ucPretragaGrupa.DgvListaProgramaTreninga.Columns["NazivGrupe"].HeaderText = "Naziv grupe";
+                ucPretragaGrupa.DgvListaProgramaTreninga.Columns["DatumPocetka"].HeaderText = "Datum pocetka";
+                ucPretragaGrupa.DgvListaProgramaTreninga.Columns["DatumKraja"].HeaderText = "Datum kraja";
+                ucPretragaGrupa.DgvListaProgramaTreninga.Columns["ProgramTreninga"].HeaderText = "Program treninga";
+
+                return ucPretragaGrupa;
+            }
+            catch (UserException ex)
+            {
+                Console.WriteLine(ex);
+                return ucPretragaGrupa;
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message);
+                return ucPretragaGrupa;
+            }
         }
         private void IzaberiProgramTreningaZaIzmenu(object sender, EventArgs e)
         {
@@ -28,13 +51,13 @@ namespace Client.GuiController
             {
                 ucPretragaGrupa.LblGreska.Visible = false;
 
-                if (ucPretragaGrupa.DgvListaGrupa.SelectedRows.Count != 1)
+                if (ucPretragaGrupa.DgvListaProgramaTreninga.SelectedRows.Count != 1)
                 {
-                    ucPretragaGrupa.LblGreska.Text = "Morate da odaberete jedan program treninga";
+                    ucPretragaGrupa.LblGreska.Text = "Morate da odaberete jednu grupu";
                     ucPretragaGrupa.LblGreska.Visible = true;
-                    throw new UserException("userex >> selektovan program treninga");
+                    throw new UserException("userex >> selektovana grupa");
                 }
-                Grupa grupa = (Grupa)ucPretragaGrupa.DgvListaGrupa.SelectedRows[0].DataBoundItem;
+                Grupa grupa = (Grupa)ucPretragaGrupa.DgvListaProgramaTreninga.SelectedRows[0].DataBoundItem;
                 Grupa g = ClientCommunication.Instance.VratiGrupu(grupa);
                 MainCoordinator.Instance.PrikaziPodatkeOgrupi(g);
             }
@@ -63,12 +86,12 @@ namespace Client.GuiController
                         SearchQuery = $" lower(Grupa.NazivGrupe) like '%{filter}%'"
                     };
                     List<Grupa> filtriraneGrupe = ClientCommunication.Instance.PretraziGrupe(g);
-                    ucPretragaGrupa.DgvListaGrupa.DataSource = filtriraneGrupe;
+                    ucPretragaGrupa.DgvListaProgramaTreninga.DataSource = filtriraneGrupe;
                 }
                 else
                 {
                     List<Grupa> grupe = ClientCommunication.Instance.VratiSveGrupe();
-                    ucPretragaGrupa.DgvListaGrupa.DataSource = grupe;
+                    ucPretragaGrupa.DgvListaProgramaTreninga.DataSource = grupe;
                 }
             }
             catch (Exception ex)
@@ -93,6 +116,9 @@ namespace Client.GuiController
             grupa = g;
 
             ucKreirajGrupu.CbProgramTreninga.DataSource = new BindingList<ProgramTreninga>(ClientCommunication.Instance.VratiSveProgrameTreninga());
+            prijaveUGrupi.Clear();
+            prijaveVanGrupe.Clear();
+
             if (g != null)
             {
                 ucKreirajGrupu.TxtNazivGrupe.Text = g.NazivGrupe;
@@ -100,15 +126,28 @@ namespace Client.GuiController
                 ucKreirajGrupu.DtpPocetak.Value = g.DatumPocetka;
                 ucKreirajGrupu.DtpKraj.Value = g.DatumKraja;
                 prijaveUGrupi = new BindingList<Prijava>(ClientCommunication.Instance.VratiPrijaveZaGrupu(g));
-                ucKreirajGrupu.DgvPrijaveUGrupi.DataSource = prijaveUGrupi;
                 prijaveVanGrupe = new BindingList<Prijava>(ClientCommunication.Instance.VratiPrijaveVanGrupe(g));
-                ucKreirajGrupu.DgvPrijaveVanGrupe.DataSource = prijaveVanGrupe;
+                ucKreirajGrupu.LblTitle.Text = "Izmeni Grupu";
             }
             if (g == null)
             {
+                ucKreirajGrupu.BtnObrisi.Visible = false;
                 ucKreirajGrupu.CbProgramTreninga.SelectedIndex = -1;
                 ucKreirajGrupu.CbProgramTreninga.SelectedIndexChanged += (s, e) => VratiPrijave();
             }
+            ucKreirajGrupu.DgvPrijaveUGrupi.DataSource = prijaveUGrupi;
+            ucKreirajGrupu.DgvPrijaveVanGrupe.DataSource = prijaveVanGrupe;
+
+            ucKreirajGrupu.DgvPrijaveVanGrupe.Columns["ProgramTreninga"].Visible = false;
+            ucKreirajGrupu.DgvPrijaveVanGrupe.Columns["Grupa"].Visible = false;
+            ucKreirajGrupu.DgvPrijaveVanGrupe.Columns["DatumPrijave"].HeaderText = "Datum prijave";
+            ucKreirajGrupu.DgvPrijaveVanGrupe.Columns["UplacenaClanarina"].HeaderText = "Uplacena clanarina";
+
+            ucKreirajGrupu.DgvPrijaveUGrupi.Columns["ProgramTreninga"].Visible = false;
+            ucKreirajGrupu.DgvPrijaveUGrupi.Columns["Grupa"].Visible = false;
+            ucKreirajGrupu.DgvPrijaveUGrupi.Columns["DatumPrijave"].HeaderText = "Datum prijave";
+            ucKreirajGrupu.DgvPrijaveUGrupi.Columns["UplacenaClanarina"].HeaderText = "Uplacena clanarina";
+
             ucKreirajGrupu.BtnUbaci.Click += (s, e) => DodajPrijavuUGrupu();
             ucKreirajGrupu.BtnIzbaci.Click += (s, e) => IzbaciPrijavuIzGrupe();
             ucKreirajGrupu.BtnObrisi.Click += (s, e) => ObrisiGrupu();
@@ -149,17 +188,24 @@ namespace Client.GuiController
                 //prazna polja
                 if (ucKreirajGrupu.TxtNazivGrupe.Text == "")
                 {
-                    ucKreirajGrupu.LblGreskaNazivGrupe.Text = "Morate uneti naziv treninga";
+                    ucKreirajGrupu.LblGreskaNazivGrupe.Text = "Morate uneti naziv grupe";
                     ucKreirajGrupu.LblGreskaNazivGrupe.Visible = true;
                     throw new UserException("userexc >> naziv treninga");
                 }
 
                 if (ucKreirajGrupu.CbProgramTreninga.SelectedIndex == -1)
                 {
-                    ucKreirajGrupu.LblGreskaProgramTreninga.Text = "Morate uneti dan u nedelji";
+                    ucKreirajGrupu.LblGreskaProgramTreninga.Text = "Morate uneti program treninga";
                     ucKreirajGrupu.LblGreskaProgramTreninga.Visible = true;
                     throw new UserException("userexc >> dan u nedelji");
                 }
+                if (ucKreirajGrupu.DtpPocetak.Value > ucKreirajGrupu.DtpKraj.Value)
+                {
+                    ucKreirajGrupu.LblGreskaDatumKraja.Text = "Datum kraja ne moze biti pre datuma pocetka";
+                    ucKreirajGrupu.LblGreskaDatumKraja.Visible = true;
+                    throw new UserException("userexc >> datum kraja");
+                }
+
 
                 //broj karaktera
                 if (ucKreirajGrupu.TxtNazivGrupe.Text.Length > 50)
@@ -168,6 +214,8 @@ namespace Client.GuiController
                     ucKreirajGrupu.LblGreskaNazivGrupe.Visible = true;
                     throw new UserException("userex >> naziv karakteri");
                 }
+
+
 
                 Grupa g = new Grupa()
                 {

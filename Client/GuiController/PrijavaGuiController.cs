@@ -44,6 +44,7 @@ namespace Client.GuiController
                     return;
                 }
                 ClientCommunication.Instance.PosaljiPrijavu(prijava);
+                MainCoordinator.Instance.PrikaziSveProgramTreningaKorisnik();
             }
             catch (UserException ex)
             {
@@ -81,6 +82,8 @@ namespace Client.GuiController
             ucMojiProgramiTreninga = new UcMojiProgramiTreninga();
             BindingList<Prijava> prijave = new BindingList<Prijava>(ClientCommunication.Instance.VratiPrijaveZaKorisnika(MainCoordinator.Instance.ulogovaniKorisnik));
             ucMojiProgramiTreninga.dgvPrijave.DataSource = prijave;
+            ucMojiProgramiTreninga.dgvPrijave.Columns["Korisnik"].Visible = false;
+            ucMojiProgramiTreninga.dgvPrijave.Columns["UplacenaClanarina"].HeaderText = "Uplacena clanarina";
             if (prijave.Count == 0)
             {
                 ucMojiProgramiTreninga.dgvPrijave.Visible = false;

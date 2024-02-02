@@ -49,7 +49,6 @@
     <Compile Include="ExtensionMethods.cs" />
     <Compile Include="IEntity.cs" />
     <Compile Include="Model\Administrator.cs" />
-    <Compile Include="Model\CrudStatus.cs" />
     <Compile Include="Model\DanUNedelji.cs" />
     <Compile Include="Model\Grupa.cs" />
     <Compile Include="Model\Korisnik.cs" />
